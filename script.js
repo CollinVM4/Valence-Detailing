@@ -1,7 +1,7 @@
 const settings = {
   businessName: "Valence Details",
-  detailerEmail: "detailer@example.com",
-  detailerPhone: "15555551234"
+  detailerEmail: "devon@valencedetails.com",
+  detailerPhone: "4079195814"
 };
 
 const packageData = {
@@ -9,7 +9,7 @@ const packageData = {
     id: "express",
     name: "Express Detail",
     snippet: "Basic interior & exterior detail.",
-    prices: { coupe: 120, suv: 160 },
+    prices: { coupe: 140, suv: 150, truck: 160 },
     note: "Price may vary by vehicle condition.",
     includes: [
       "Hand wash & dry",
@@ -23,7 +23,7 @@ const packageData = {
     id: "premium",
     name: "Premium Full Detail",
     snippet: "Deep interior & basic exterior.",
-    prices: { coupe: 220, suv: 280 },
+    prices: { coupe: 180, suv: 190, truck: 210 },
     note: "Price depends on condition of interior.",
     includes: [
       "Hand wash & dry",
@@ -40,7 +40,7 @@ const packageData = {
     id: "paint",
     name: "Paint Correction",
     snippet: "Exterior detail + clay bar & polish.",
-    prices: { coupe: 350, suv: 450 },
+    prices: { coupe: 250, suv: 300, truck: 300 },
     note: "Final quote may vary by paint condition.",
     includes: [
       "Hand wash & dry",
