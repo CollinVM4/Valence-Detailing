@@ -20,6 +20,13 @@ body {
   line-height: 1.5;
 }
 
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -82,11 +89,11 @@ body {
 .section {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 3rem 1rem;
+  padding: 2.5rem 1rem;
 }
 
 .hero {
-  min-height: 48vh;
+  min-height: 26vh;
   display: grid;
   align-items: center;
 }
@@ -95,21 +102,100 @@ body {
   max-width: 560px;
 }
 
-h1,
-h2,
-h3 {
-  margin-top: 0;
+.section-intro {
+  margin-bottom: 1.5rem;
 }
 
-.section-intro {
-  margin-top: -0.5rem;
-  margin-bottom: 1.5rem;
+.button {
+  display: inline-block;
+  border: 1px solid var(--button-bg);
+  background: var(--button-bg);
+  color: var(--button-text);
+  text-decoration: none;
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.carousel {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.carousel-image {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+}
+
+.carousel-button {
+  border: 1px solid var(--border);
+  background: var(--header-bg);
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 0.6rem 0.8rem;
+  cursor: pointer;
+}
+
+.carousel-caption {
+  margin-bottom: 1rem;
+}
+
+.vehicle-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.vehicle-button {
+  border: 1px solid var(--border);
+  background: var(--header-bg);
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+}
+
+.vehicle-button.is-active {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border-color: var(--button-bg);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.service-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  padding: 1rem;
+}
+
+.service-title-link {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.price-line {
+  margin: 0.5rem 0;
+}
+
+.price-note {
+  margin-top: 0.75rem;
 }
 
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .gallery-item {
@@ -125,22 +211,28 @@ h3 {
   display: block;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.service-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  padding: 1rem;
+.pagination .button[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.package-detail {
+  max-width: 800px;
+}
+
+.includes-list {
+  padding-left: 1.2rem;
 }
 
 .intake-form {
   display: grid;
   gap: 0.75rem;
-  max-width: 640px;
 }
 
 .intake-form input,
@@ -153,20 +245,45 @@ h3 {
   background: #ffffff;
 }
 
-.button {
-  display: inline-block;
-  border: 1px solid var(--button-bg);
-  background: var(--button-bg);
-  color: var(--button-text);
-  text-decoration: none;
-  padding: 0.65rem 1rem;
-  cursor: pointer;
-  width: fit-content;
-}
-
 .form-message {
   min-height: 1.2rem;
   margin-top: 0.75rem;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+}
+
+.modal.is-open {
+  display: block;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.modal-content {
+  position: relative;
+  max-width: 580px;
+  margin: 6vh auto;
+  padding: 1.2rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+}
+
+.modal-close {
+  position: absolute;
+  right: 0.4rem;
+  top: 0.3rem;
+  border: none;
+  background: transparent;
+  font-size: 1.6rem;
+  cursor: pointer;
 }
 
 @media (min-width: 800px) {

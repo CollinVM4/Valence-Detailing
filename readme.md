@@ -1,37 +1,42 @@
-# Valence Detailing Website (Static)
+# Valence Details Website (Static)
 
-Simple static website using only HTML, CSS, and JavaScript.
+Simple multi-page site built with only HTML, CSS, and JavaScript.
 
-## Files
+## Pages
 
-- `index.html` - structure/content (header, gallery, services, intake form)
+- `index.html` - homepage (simple info, picture carousel, package cards, BOOK NOW)
+- `gallery.html` - gallery page with pagination
+- `services.html` - services page with package cards
+- `package.html` - dynamic package detail page + booking popup
 - `styles.css` - all styling
-- `script.js` - menu toggle + intake form email/text launch
+- `script.js` - shared behavior and data
 
-## Quick Customize
+## Main Edits You Will Make
 
-1. **Business name / logo text**
-	- Edit the `.logo` text in `index.html`
-	- Update `businessName` in `script.js`
+1. **Business contact settings** (`script.js`)
+	- `settings.businessName`
+	- `settings.detailerEmail`
+	- `settings.detailerPhone`
 
-2. **Contact destination for intake messages**
-	- In `script.js`, update:
-	  - `detailerEmail`
-	  - `detailerPhone` (numbers only, include country code)
+2. **Package details and pricing** (`script.js`)
+	- Edit `packageData` for names, snippets, includes, notes, and prices
+	- Prices are split by:
+	  - `coupe` (coupe/sedan)
+	  - `suv` (SUV/truck)
 
-3. **Gallery photos**
-	- In `index.html`, replace the image `src` values in the `#gallery` section
+3. **Gallery photos** (`script.js`)
+	- Edit the `galleryImages` array (`src`, `alt`, `caption`)
 
-4. **Services list**
-	- In `index.html`, edit cards inside `#services`
+## Booking Flow
 
-## Intake Form Behavior
+- User clicks a package card → opens `package.html?package=...`
+- `Book Now` opens a popup form collecting:
+  - Full Name
+  - Email
+  - Phone
+  - Preferred contact (email or SMS)
+- The outgoing message automatically includes the selected package.
 
-- Form collects: name, email, phone, vehicle, service, preferred contact, notes
-- On submit:
-  - `Email` opens the user's default email app with a prefilled draft
-  - `Text Message` opens the user's SMS app with a prefilled draft
-
-## Run Locally
+## Run
 
 Open `index.html` in a browser.
