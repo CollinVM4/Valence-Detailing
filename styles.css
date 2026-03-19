@@ -39,6 +39,7 @@ p {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0.75rem 1rem;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -46,13 +47,18 @@ p {
 }
 
 .logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   text-decoration: none;
   color: var(--text);
   font-weight: bold;
   letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 
 .menu-button {
+  margin-left: auto;
   border: 1px solid var(--border);
   background: var(--header-bg);
   font-size: 1.1rem;
@@ -68,6 +74,12 @@ p {
   background: var(--header-bg);
   border: 1px solid var(--border);
   min-width: 180px;
+}
+
+.home-book-now {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .site-nav a {

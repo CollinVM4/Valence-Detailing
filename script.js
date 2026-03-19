@@ -58,47 +58,47 @@ const galleryImages = [
   {
     src: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=80",
     alt: "Clean red sports car after detailing",
-    caption: "Clean finish after detail"
+    caption: ""
   },
   {
     src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
     alt: "Shiny black coupe in sunlight",
-    caption: "Exterior shine and polish"
+    caption: ""
   },
   {
     src: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80",
     alt: "SUV exterior wash and polish",
-    caption: "SUV detail package"
+    caption: ""
   },
   {
     src: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&q=80",
     alt: "Luxury sedan cleaned and waxed",
-    caption: "Interior and exterior refresh"
+    caption: ""
   },
   {
     src: "https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=1200&q=80",
     alt: "Blue sports car parked outdoors",
-    caption: "Polish and wax protection"
+    caption: ""
   },
   {
     src: "https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=1200&q=80",
     alt: "Black SUV after wash",
-    caption: "Truck and SUV detailing"
+    caption: ""
   },
   {
     src: "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?auto=format&fit=crop&w=1200&q=80",
     alt: "White sedan close-up",
-    caption: "Detail and trim protection"
+    caption: ""
   },
   {
     src: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80",
     alt: "Car front view on street",
-    caption: "Fresh exterior wash"
+    caption: ""
   },
   {
     src: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=80",
     alt: "Silver car in lot",
-    caption: "Full detail result"
+    caption: ""
   }
 ];
 
@@ -229,6 +229,11 @@ function setupHomeCarousel() {
     currentIndex = (currentIndex + 1) % carouselItems.length;
     renderSlide();
   });
+
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % carouselItems.length;
+    renderSlide();
+  }, 4000);
 
   renderSlide();
 }
