@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valence Details</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logo" href="#top" aria-label="Valence Detailing home">VALENCE DETAILS</a>
+        <button
+          class="menu-button"
+          id="menuButton"
+          aria-expanded="false"
+          aria-controls="siteNav"
+          aria-label="Toggle navigation"
+        >
+          ☰
+        </button>
+        <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+          <a href="#gallery">Gallery</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero section">
+        <div class="hero-text">
+          <h1>Professional Car Detailing</h1>
+          <p>Simple packages, quality work, and a clean finish every time.</p>
+          <a class="button" href="#contact">Book a Detail</a>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <h2>Gallery</h2>
+        <p class="section-intro">A few recent details and cleanups.</p>
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=80" alt="Clean red sports car after detailing" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" alt="Shiny black coupe in sunlight" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80" alt="SUV exterior wash and polish" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&q=80" alt="Luxury sedan cleaned and waxed" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <h2>Services</h2>
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Exterior Wash</h3>
+            <p>Hand wash, wheel clean, and dry finish.</p>
+          </article>
+          <article class="service-card">
+            <h3>Interior Detail</h3>
+            <p>Vacuum, wipe-down, and interior touch-up.</p>
+          </article>
+          <article class="service-card">
+            <h3>Full Detail</h3>
+            <p>Complete inside and outside refresh package.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <h2>Quick Intake Form</h2>
+        <p class="section-intro">Share your details and start an email or text message.</p>
+
+        <form id="intakeForm" class="intake-form">
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" required />
+
+          <label for="vehicle">Vehicle</label>
+          <input id="vehicle" name="vehicle" type="text" placeholder="Year / Make / Model" required />
+
+          <label for="service">Requested Service</label>
+          <select id="service" name="service" required>
+            <option value="">Select one</option>
+            <option value="Exterior Wash">Exterior Wash</option>
+            <option value="Interior Detail">Interior Detail</option>
+            <option value="Full Detail">Full Detail</option>
+            <option value="Not Sure Yet">Not Sure Yet</option>
+          </select>
+
+          <label for="preferredContact">Start message with</label>
+          <select id="preferredContact" name="preferredContact" required>
+            <option value="email">Email</option>
+            <option value="sms">Text Message</option>
+          </select>
+
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Anything we should know?"></textarea>
+
+          <button type="submit" class="button">Start Message</button>
+        </form>
+
+        <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
