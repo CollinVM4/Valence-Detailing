@@ -8,104 +8,119 @@ const packageData = {
   express: {
     id: "express",
     name: "Express Detail",
-    snippet: "Basic interior & exterior detail.",
-    prices: { coupe: 140, suv: 150, truck: 160 },
-    note: "Price may vary by vehicle condition.",
+    snippet: "Basic interior & exterior detail",
+    prices: { coupe: "$140", suv: "$150 - $160" },
+    priceLabel: "Vehicle Type Price",
+    note: "",
     includes: [
-      "Hand wash & dry",
-      "Wheels cleaned",
-      "Tire dressing",
-      "Interior vacuum and wipe down",
-      "Windows & mirrors cleaned"
+      "Snow foam pre-soak to loosen dirt & road grime",
+      "2 bucket contact wash with pH neutral soap",
+      "Bug & tar removal",
+      "Wheels & tires cleaned",
+      "Spot-free water rinse",
+      "Hand dry",
+      "Tire shine",
+      "Interior air blow out",
+      "Interior vacuum & detail",
+      "Door jambs cleaned",
+      "Windows & mirrors streak free clean"
     ]
   },
   premium: {
     id: "premium",
     name: "Premium Full Detail",
-    snippet: "Deep interior & basic exterior.",
-    prices: { coupe: 180, suv: 190, truck: 210 },
+    snippet: "Deep interior & basic exterior",
+    prices: { coupe: "$180", suv: "$190 - $210" },
+    priceLabel: "Vehicle Type Price",
     note: "Price depends on condition of interior.",
     includes: [
-      "Hand wash & dry",
-      "Wheels cleaned",
-      "Tire dressing",
+      "Snow foam pre-soak to loosen dirt & road grime",
+      "2 bucket contact wash with pH neutral soap",
+      "Bug & tar removal",
+      "Wheels & tires cleaned",
+      "Spot-free water rinse",
+      "3 month ceramic spray wax",
+      "Hand dry",
+      "Tire shine",
       "Interior blow out",
       "Deep vacuum & shampoo (carpets, seats, mats)",
-      "Leather/plastics cleaned & protected",
+      "Leather / plastics cleaned & protected",
       "Door jambs cleaned",
-      "Glass inside & out"
+      "Windows & mirrors streak free clean"
     ]
   },
   paint: {
     id: "paint",
     name: "Paint Correction",
-    snippet: "Exterior detail + clay bar & polish.",
-    prices: { coupe: 250, suv: 300, truck: 300 },
-    note: "Final quote may vary by paint condition.",
+    snippet: "Exterior detail + clay bar & polish",
+    prices: { coupe: "$80 exterior wash + $100 per hour machine polishing", suv: "$80 exterior wash + $100 per hour machine polishing" },
+    priceLabel: "Pricing",
+    note: "",
     includes: [
-      "Hand wash & dry",
+      "Snow foam pre-soak to loosen dirt & road grime",
+      "2 bucket contact wash with pH neutral soap",
       "Bug & tar removal",
+      "Wheels & barrels cleaned",
+      "Spot-free water rinse",
+      "Hand dry",
+      "Tire shine",
       "Iron removal",
       "Clay bar",
-      "Machine polish",
-      "Wax sealant",
-      "Wheels/tire shine, trim protection"
+      "Machine polish to remove light scratches and swirl marks",
+      "Alcohol wipe down to remove polish residue",
+      "Wax sealant to preserve paint"
     ]
   }
 };
 
-const galleryImages = [
+const addOns = [
+  "Pet hair removal $30 - $50",
+  "Headlight restoration $50",
+  "Engine bay cleaning $60",
+  "Severe stain removal $50",
+  "Glass protectant $50",
+  "Ceramic wax spray $30",
+  "Leather treatment $20"
+];
+
+const homeCarouselImages = [
   {
-    src: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=80",
+    src: "media/carosuel.png",
     alt: "Clean red sports car after detailing",
     caption: ""
   },
   {
-    src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
-    alt: "Shiny black coupe in sunlight",
-    caption: ""
-  },
-  {
-    src: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80",
-    alt: "SUV exterior wash and polish",
-    caption: ""
-  },
-  {
-    src: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&q=80",
-    alt: "Luxury sedan cleaned and waxed",
-    caption: ""
-  },
-  {
-    src: "https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=1200&q=80",
-    alt: "Blue sports car parked outdoors",
-    caption: ""
-  },
-  {
-    src: "https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=1200&q=80",
-    alt: "Black SUV after wash",
-    caption: ""
-  },
-  {
-    src: "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?auto=format&fit=crop&w=1200&q=80",
-    alt: "White sedan close-up",
-    caption: ""
-  },
-  {
-    src: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80",
-    alt: "Car front view on street",
-    caption: ""
-  },
-  {
-    src: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=80",
-    alt: "Silver car in lot",
-    caption: ""
+    src: "media/IMG_0483.png",
+    alt: "HONDA",
+    caption: "" 
   }
+
 ];
+
+const galleryImagesByCategory = {
+  exterior: [
+    { src: "media/IMG_0482.png", alt: "Exterior detail example 2" },
+    { src: "media/IMG_0483.png", alt: "Exterior detail example 3" },
+    { src: "media/IMG_0568.png", alt: "Exterior detail example 4" },
+    { src: "media/IMG_0569.png", alt: "Exterior detail example 4" },
+    { src: "media/IMG_0570.png", alt: "Exterior detail example 5" },
+    { src: "media/IMG_0572.png", alt: "Exterior detail example 6" }
+  ],
+  interior: [
+    { src: "media/IMG_0479.png", alt: "Interior detail example 1" },
+    { src: "media/IMG_0480.png", alt: "Interior detail example 2" },
+    { src: "media/IMG_0481.png", alt: "Interior detail example 3" },
+    { src: "media/IMG_0560.png", alt: "Interior detail example 4" },
+    { src: "media/IMG_0561.png", alt: "Interior detail example 5" },
+    { src: "media/IMG_0563.png", alt: "Interior detail example 6" },
+    { src: "media/IMG_0564.png", alt: "Interior detail example 4" }
+  ]
+};
 
 let selectedVehicleType = "coupe";
 
 function formatPrice(value) {
-  return `$${value}`;
+  return value;
 }
 
 function startEmail(subject, message) {
@@ -142,27 +157,22 @@ function setupMenu() {
 function buildCardMarkup(pkg) {
   return `
     <article class="service-card">
-      <h3><a class="service-title-link" href="package.html?package=${pkg.id}">${pkg.name}</a></h3>
+      <h3><a class="service-title-link" href="services.html#package-${pkg.id}">${pkg.name}</a></h3>
       <p>${pkg.snippet}</p>
       <p class="price-line"><strong>Price:</strong> <span data-price-for="${pkg.id}"></span></p>
-      <a class="button" href="package.html?package=${pkg.id}">View Package</a>
+      <a class="button" href="services.html#package-${pkg.id}">View Details</a>
     </article>
   `;
 }
 
 function renderPackageCards() {
   const homeContainer = document.getElementById("packageCardsHome");
-  const servicesContainer = document.getElementById("packageCardsServices");
   const cardsMarkup = Object.values(packageData)
     .map((pkg) => buildCardMarkup(pkg))
     .join("");
 
   if (homeContainer) {
     homeContainer.innerHTML = cardsMarkup;
-  }
-
-  if (servicesContainer) {
-    servicesContainer.innerHTML = cardsMarkup;
   }
 
   updateCardPrices();
@@ -179,9 +189,57 @@ function updateCardPrices() {
       return;
     }
 
-    const price = pkg.prices[selectedVehicleType];
+    const price = pkg.prices[selectedVehicleType] || pkg.prices.coupe;
     priceElement.textContent = `${label}: ${formatPrice(price)}`;
   });
+}
+
+function renderServicesPage() {
+  const servicesPackages = document.getElementById("servicesPackages");
+
+  if (!servicesPackages) {
+    return;
+  }
+
+  const packageMarkup = Object.values(packageData)
+    .map(
+      (pkg) => `
+        <article class="service-panel" id="package-${pkg.id}">
+          <div class="service-panel-inner">
+            <h2>${pkg.name}</h2>
+            <p class="service-snippet">${pkg.snippet}</p>
+            <p class="service-price-label"><strong>${pkg.priceLabel}</strong></p>
+            ${
+              pkg.id === "paint"
+                ? `<p class="price-line">${pkg.prices.coupe}</p>`
+                : `
+                  <p class="price-line"><strong>Sedan / Coupe:</strong> ${pkg.prices.coupe}</p>
+                  <p class="price-line"><strong>Truck / SUV:</strong> ${pkg.prices.suv}</p>
+                `
+            }
+            ${pkg.note ? `<p class="price-note">*${pkg.note}*</p>` : ""}
+            <h3>Includes</h3>
+            <ul class="includes-list">
+              ${pkg.includes.map((item) => `<li>${item}</li>`).join("")}
+            </ul>
+          </div>
+        </article>
+      `
+    )
+    .join("");
+
+  const addOnsMarkup = `
+    <section class="service-panel add-ons-panel" id="package-add-ons">
+      <div class="service-panel-inner">
+        <h2>Add-Ons</h2>
+        <ul class="includes-list">
+          ${addOns.map((item) => `<li>${item}</li>`).join("")}
+        </ul>
+      </div>
+    </section>
+  `;
+
+  servicesPackages.innerHTML = `${packageMarkup}${addOnsMarkup}`;
 }
 
 function setupVehicleSelectors() {
@@ -211,7 +269,11 @@ function setupHomeCarousel() {
   }
 
   let currentIndex = 0;
-  const carouselItems = galleryImages.slice(0, 4);
+  const carouselItems = homeCarouselImages.slice(0, 4);
+
+  if (!carouselItems.length) {
+    return;
+  }
 
   function renderSlide() {
     const slide = carouselItems[currentIndex];
@@ -243,6 +305,7 @@ function setupGalleryPagination() {
   const prevButton = document.getElementById("galleryPrev");
   const nextButton = document.getElementById("galleryNext");
   const pageLabel = document.getElementById("galleryPageLabel");
+  const toggleButtons = document.querySelectorAll("[data-gallery-type]");
 
   if (!galleryGrid || !prevButton || !nextButton || !pageLabel) {
     return;
@@ -250,11 +313,22 @@ function setupGalleryPagination() {
 
   const pageSize = 6;
   let currentPage = 1;
-  const totalPages = Math.ceil(galleryImages.length / pageSize);
+  let galleryType = "exterior";
+
+  function getActiveImages() {
+    return galleryImagesByCategory[galleryType] || [];
+  }
 
   function renderPage() {
+    const activeImages = getActiveImages();
+    const totalPages = Math.max(1, Math.ceil(activeImages.length / pageSize));
+
+    if (currentPage > totalPages) {
+      currentPage = totalPages;
+    }
+
     const start = (currentPage - 1) * pageSize;
-    const pageItems = galleryImages.slice(start, start + pageSize);
+    const pageItems = activeImages.slice(start, start + pageSize);
 
     galleryGrid.innerHTML = pageItems
       .map(
@@ -272,6 +346,8 @@ function setupGalleryPagination() {
   }
 
   prevButton.addEventListener("click", () => {
+    const totalPages = Math.max(1, Math.ceil(getActiveImages().length / pageSize));
+
     if (currentPage > 1) {
       currentPage -= 1;
       renderPage();
@@ -279,10 +355,25 @@ function setupGalleryPagination() {
   });
 
   nextButton.addEventListener("click", () => {
+    const totalPages = Math.max(1, Math.ceil(getActiveImages().length / pageSize));
+
     if (currentPage < totalPages) {
       currentPage += 1;
       renderPage();
     }
+  });
+
+  toggleButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      galleryType = button.getAttribute("data-gallery-type") || "exterior";
+      currentPage = 1;
+
+      toggleButtons.forEach((item) => {
+        item.classList.toggle("is-active", item === button);
+      });
+
+      renderPage();
+    });
   });
 
   renderPage();
@@ -362,6 +453,7 @@ function setupPackageDetailPage() {
 setupMenu();
 renderPackageCards();
 setupVehicleSelectors();
+renderServicesPage();
 setupHomeCarousel();
 setupGalleryPagination();
 setupPackageDetailPage();

@@ -30,7 +30,12 @@
     <main>
       <section class="section">
         <h1>Gallery</h1>
-        <p class="section-intro">Recent details and clean finishes.</p>
+        <p class="section-intro">Tap between exterior and interior to view each set.</p>
+
+        <div class="gallery-toggle" id="galleryToggle" aria-label="Gallery category selector">
+          <button class="gallery-toggle-button is-active" type="button" data-gallery-type="exterior">Exterior</button>
+          <button class="gallery-toggle-button" type="button" data-gallery-type="interior">Interior</button>
+        </div>
 
         <div class="gallery-grid" id="galleryGrid"></div>
 
