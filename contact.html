@@ -290,7 +290,7 @@
 <div class="min-w-0">
 <p class="font-label-sm text-label-sm text-on-surface-variant mb-4 uppercase">Social Media</p>
 <div class="flex gap-4">
-<a class="font-label-sm text-label-sm text-on-surface hover:text-primary-container transition-colors flex items-center gap-2 bg-surface-container px-4 py-2 rounded" href="https://www.instagram.com/valence.details?igsh=MXE2MXFuZmtmMmszag==">
+<a class="instagram-link font-label-sm text-label-sm text-on-surface hover:text-primary-container transition-colors flex items-center gap-2 bg-surface-container px-4 py-2 rounded" data-instagram-web="https://www.instagram.com/valence.details/" href="instagram://user?username=valence.details">
                                         INSTAGRAM
                                     </a>
 
@@ -386,11 +386,28 @@
 <p class="font-label-sm text-label-sm text-on-secondary-fixed-variant tracking-widest">© 2026 VALENCE DETAILS. EXPERT CARE EVERYTIME.</p>
 </div>
 <div class="flex flex-wrap justify-center gap-8">
-<a class="text-on-secondary-fixed-variant hover:text-on-surface transition-colors duration-200 font-label-sm text-label-sm" href="https://www.instagram.com/valence.details?igsh=MXE2MXFuZmtmMmszag==">Instagram</a>
+<a class="instagram-link text-on-secondary-fixed-variant hover:text-on-surface transition-colors duration-200 font-label-sm text-label-sm" data-instagram-web="https://www.instagram.com/valence.details/" href="instagram://user?username=valence.details">Instagram</a>
 </div>
 </div>
 </footer>
 <script>
+        function openInstagramLink(event) {
+            event.preventDefault();
+            const link = event.currentTarget;
+            const webUrl = link.dataset.instagramWeb || 'https://www.instagram.com/valence.details/';
+
+            const fallbackTimer = window.setTimeout(() => {
+                window.open(webUrl, '_blank', 'noopener,noreferrer');
+            }, 700);
+
+            window.location.href = link.getAttribute('href');
+            window.setTimeout(() => window.clearTimeout(fallbackTimer), 1400);
+        }
+
+        document.querySelectorAll('.instagram-link').forEach(link => {
+            link.addEventListener('click', openInstagramLink);
+        });
+
         const isMaskedMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) ||
             (navigator.maxTouchPoints > 0 && Math.min(screen.width, screen.height) <= 900);
 
