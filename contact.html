@@ -159,6 +159,44 @@
             box-shadow: 0 0 18px rgba(0, 153, 255, 0.35);
         }
 
+        .mobile-menu-link {
+            font-size: 15px;
+            line-height: 1.2;
+            letter-spacing: 0.08em;
+            padding-top: 0.35rem;
+            padding-bottom: 0.35rem;
+        }
+
+        .mobile-menu-cta {
+            font-size: 15px;
+            letter-spacing: 0.12em;
+            min-height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu-toggle .material-symbols-outlined {
+            font-size: 30px;
+        }
+
+        .mobile-sticky-cta {
+            font-size: 14px;
+            letter-spacing: 0.14em;
+            min-height: 56px;
+        }
+
+        @media (max-width: 767px) {
+            .site-brand {
+                font-size: clamp(1.25rem, 5vw, 1.7rem);
+                line-height: 1;
+            }
+
+            .site-nav-shell {
+                min-height: 78px;
+            }
+        }
+
         html.force-mobile .desktop-nav {
             display: none !important;
         }
@@ -178,13 +216,22 @@
         html.force-mobile .mobile-sticky-cta {
             display: block !important;
         }
+
+        html.force-mobile .site-brand {
+            font-size: clamp(1.25rem, 5vw, 1.7rem);
+            line-height: 1;
+        }
+
+        html.force-mobile .site-nav-shell {
+            min-height: 78px;
+        }
     </style>
 </head>
 <body class="font-body-md text-body-md">
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl dark:bg-surface/80 border-b border-outline-variant/30">
-<div class="flex justify-between items-center px-5 md:px-margin-desktop py-4 max-w-container-max mx-auto">
-<div class="font-display-lg text-headline-lg font-black tracking-tighter text-primary dark:text-primary">VALENCE DETAILS</div>
+<div class="site-nav-shell flex justify-between items-center px-5 md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="site-brand font-display-lg text-headline-lg font-black tracking-tighter text-primary dark:text-primary">VALENCE DETAILS</div>
 <div class="hidden md:flex items-center space-x-8 desktop-nav">
 <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="index.html">Home</a>
 <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="gallery.html">Gallery</a>
@@ -194,17 +241,17 @@
 <a class="hidden md:inline-flex desktop-nav transition-all duration-300 ease-in-out active:scale-95 bg-primary-container text-on-primary-container px-6 py-3 font-label-sm text-label-sm font-bold tracking-widest items-center" href="#booking-form">
                 BOOK NOW
             </a>
-<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation" class="mobile-menu-toggle md:hidden text-primary p-2 border border-primary/40 rounded-lg menu-glow" id="mobile-menu-button" type="button">
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation" class="mobile-menu-toggle md:hidden text-primary p-3 border border-primary/40 rounded-lg menu-glow" id="mobile-menu-button" type="button">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
 <div class="mobile-menu mobile-menu-panel hidden md:hidden px-5 py-4" id="mobile-menu">
 <div class="flex flex-col gap-4">
-<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="index.html">Home</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="gallery.html">Gallery</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="services.html">Services</a>
-<a class="text-primary font-bold font-label-sm text-label-sm uppercase" href="contact.html">Contact</a>
-<a class="bg-primary text-on-primary-container px-6 py-3 font-label-sm text-label-sm font-bold uppercase text-center" href="#booking-form">Book Now</a>
+<a class="mobile-menu-link text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="index.html">Home</a>
+<a class="mobile-menu-link text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="gallery.html">Gallery</a>
+<a class="mobile-menu-link text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="services.html">Services</a>
+<a class="mobile-menu-link text-primary font-bold font-label-sm text-label-sm uppercase" href="contact.html">Contact</a>
+<a class="mobile-menu-cta bg-primary text-on-primary-container px-6 py-3 font-label-sm text-label-sm font-bold uppercase text-center" href="#booking-form">Book Now</a>
 </div>
 </div>
 </nav>
