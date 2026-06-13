@@ -1,52 +1,303 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Valence Details | Gallery</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="header-inner">
-        <a class="logo" href="index.html" aria-label="Valence Detailing home">VALENCE DETAILS</a>
-        <button
-          class="menu-button"
-          id="menuButton"
-          aria-expanded="false"
-          aria-controls="siteNav"
-          aria-label="Toggle navigation"
-        >
-          ☰
-        </button>
-        <nav class="site-nav" id="siteNav" aria-label="Main navigation">
-          <a href="index.html">Home</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="services.html">Services</a>
-        </nav>
-      </div>
-    </header>
+<!DOCTYPE html>
 
-    <main>
-      <section class="section">
-        <h1>Gallery</h1>
-        <p class="section-intro">Tap between exterior and interior to view each set.</p>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VALENCE DETAILS | GALLERY</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&amp;family=Hanken+Grotesk:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#343539",
+                        "on-secondary-container": "#b7b5b4",
+                        "on-secondary": "#313030",
+                        "outline-variant": "#3f4753",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#bfc7d5",
+                        "surface-container": "#1e1f23",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-container-low": "#1a1b1f",
+                        "tertiary": "#c9c6c5",
+                        "surface-container-lowest": "#0d0e12",
+                        "secondary": "#c8c6c5",
+                        "tertiary-container": "#969494",
+                        "on-tertiary": "#313030",
+                        "tertiary-fixed-dim": "#c9c6c5",
+                        "on-secondary-fixed-variant": "#474746",
+                        "inverse-primary": "#0061a5",
+                        "surface-container-high": "#292a2e",
+                        "on-tertiary-container": "#2e2d2d",
+                        "inverse-surface": "#e3e2e7",
+                        "surface": "#121317",
+                        "surface-tint": "#9fcaff",
+                        "on-primary-container": "#002f54",
+                        "on-primary": "#003259",
+                        "background": "#121317",
+                        "outline": "#89919e",
+                        "on-background": "#e3e2e7",
+                        "surface-dim": "#121317",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#343539",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-surface": "#e3e2e7",
+                        "secondary-container": "#474746",
+                        "inverse-on-surface": "#2f3034",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "primary": "#9fcaff",
+                        "tertiary-fixed": "#e5e2e1",
+                        "primary-container": "#0099ff",
+                        "surface-bright": "#38393d",
+                        "primary-fixed-dim": "#9fcaff",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed": "#001d36",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#d2e4ff",
+                        "on-primary-fixed-variant": "#00497e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "80px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["JetBrains Mono"],
+                        "display-lg": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(159, 202, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: #9fcaff;
+            box-shadow: 0 0 20px rgba(159, 202, 255, 0.2);
+            transform: translateY(-4px);
+        }
+        .image-zoom:hover img {
+            transform: scale(1.05);
+        }
+        .nav-underline {
+            position: relative;
+        }
+        .nav-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #9fcaff;
+            transition: width 0.3s ease;
+        }
+        .nav-underline:hover::after {
+            width: 100%;
+        }
+        .glow-border-bottom {
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        .active-tab {
+            border-bottom: 2px solid #9fcaff;
+            color: #9fcaff;
+        }
+        @keyframes subtle-drift {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary/30 min-h-screen">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-xl">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-display-lg text-headline-lg-mobile md:text-headline-lg tracking-tighter uppercase text-primary dark:text-primary">
+                VALENCE DETAILS
+            </div>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="index.html">Home</a>
+<a class="font-label-sm text-label-sm text-primary font-bold border-b-2 border-primary pb-1" href="gallery.html">Gallery</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="services.html">Services</a>
+<a class="bg-primary text-on-primary px-6 py-2 font-label-sm text-label-sm uppercase tracking-widest scale-100 hover:scale-105 active:scale-95 transition-all duration-300" href="contact.html">
+                    Book Now
+                </a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-20">
+<!-- Header Section -->
+<header class="mb-16">
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg uppercase mb-4 text-on-surface">Portfolio Gallery</h1>
+<p class="max-w-2xl text-on-surface-variant font-body-md text-body-md">
+                Experience the precision of our high-performance finishes. Each vehicle undergoes a meticulous restoration process to achieve an electric, showroom glow.
+            </p>
+</header>
+<!-- Toggle / Filter Section -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-gutter mb-12 border-b border-outline-variant/20 pb-4">
+<div class="flex gap-gutter" id="gallery-tabs">
+<button class="tab-btn active-tab font-label-sm text-label-sm uppercase tracking-widest py-2 transition-all duration-300" data-tab="exterior" onclick="switchTab('exterior')">
+                    Exterior
+                </button>
+<button class="tab-btn font-label-sm text-label-sm uppercase tracking-widest py-2 text-on-surface-variant hover:text-primary transition-all duration-300" data-tab="interior" onclick="switchTab('interior')">
+                    Interior
+                </button>
+</div>
+</div>
+</div>
+<!-- Bento Grid Gallery -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter min-h-[800px]" id="gallery-grid">
+<!-- Exterior Item 1 - Featured -->
+<div class="exterior-item md:col-span-8 md:row-span-2 group relative overflow-hidden glass-card rounded-lg cursor-pointer image-zoom">
+<img alt="Feature vehicle" class="w-full h-full object-cover transition-transform duration-700 ease-out" data-alt="A high-performance luxury sports car with a deep obsidian metallic finish, showcased in a professional automotive studio under dramatic neon blue lighting. The paint surface exhibits an incredible mirror-like reflection, highlighting the meticulous ceramic coating application. Subtle light leaks dance across the curves of the aerodynamic body, emphasizing the high-contrast dark mode aesthetic of the brand." src="media\IMG_0572.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-0 left-0 p-gutter transform translate-y-4 group-hover:translate-y-0 transition-transform">
+<span class="font-label-sm text-label-sm text-primary mb-2 block tracking-widest">CERAMIC COATING</span>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">Stealth Series GT</h3>
+</div>
+</div>
+<!-- Exterior Item 2 -->
+<div class="exterior-item md:col-span-4 group relative overflow-hidden glass-card rounded-lg cursor-pointer image-zoom">
+<img class="w-full h-full object-cover transition-transform duration-700" data-alt="Close-up detail of a modern vehicle's headlight and front grille, featuring sharp architectural lines and pristine carbon fiber textures. The image is captured in a moody, low-light environment with a single primary blue light source casting electric highlights on the polished surfaces. The focus is razor-sharp on the glass optics, demonstrating the clarity and precision of the valence details finishing process." src="media\IMG_0483.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-gutter opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-label-sm text-label-sm text-primary mb-1 block">GLOSS ENHANCEMENT</span>
+<h4 class="font-label-sm text-label-sm font-bold uppercase">Front Detail</h4>
+</div>
+</div>
+<!-- Exterior Item 3 -->
+<div class="exterior-item md:col-span-4 group relative overflow-hidden glass-card rounded-lg cursor-pointer image-zoom">
+<img class="w-full h-full object-cover transition-transform duration-700" data-alt="Side profile of a dark grey SUV with custom matte finish, parked on a clean concrete studio floor. The lighting is cold and clinical, emphasizing the texture of the paint and the aggressive stance of the vehicle. Electric blue glowing borders frame the scene, creating a sense of sophisticated depth and high-tech automotive care." src="media\IMG_0482.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-gutter opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-label-sm text-label-sm text-primary mb-1 block">PAINT CORRECTION</span>
+<h4 class="font-label-sm text-label-sm font-bold uppercase">Profile Shot</h4>
+</div>
+</div>
+<!-- Interior Items (Hidden by default) -->
+<div class="interior-item hidden md:col-span-6 group relative overflow-hidden glass-card rounded-lg cursor-pointer image-zoom">
+<img class="w-full h-[400px] object-cover transition-transform duration-700" data-alt="Macro photography of a luxury car interior featuring perforated black leather seats with contrasting primary blue stitching. The lighting is soft and diffused, highlighting the deep cleaning and conditioning of the materials. The atmosphere is pristine and high-end, showcasing the architectural beauty of the cockpit's design through a brutalist lens." src="media\IMG_0563.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-gutter opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-label-sm text-label-sm text-primary mb-1 block">LEATHER REJUVENATION</span>
+<h4 class="font-label-sm text-label-sm font-bold uppercase">Cockpit Focus</h4>
+</div>
+</div>
+<div class="interior-item hidden md:col-span-6 group relative overflow-hidden glass-card rounded-lg cursor-pointer image-zoom">
+<img class="w-full h-[400px] object-cover transition-transform duration-700" data-alt="A clean, minimalist view of a vehicle's dashboard and digital display system, rendered in a high-contrast dark palette. The surfaces are dust-free and treated with a low-sheen finish, reflecting a high level of interior detailing craftsmanship. Cold blue ambient lighting from the console illuminates the cabin with a futuristic, electric precision." src="media\IMG_0561.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-gutter opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-label-sm text-label-sm text-primary mb-1 block">SEAT SHAMPOO</span>
+<h4 class="font-label-sm text-label-sm font-bold uppercase">DIRT EXTRACTION</h4>
+</div>
+</div>
+</div>
 
-        <div class="gallery-toggle" id="galleryToggle" aria-label="Gallery category selector">
-          <button class="gallery-toggle-button is-active" type="button" data-gallery-type="exterior">Exterior</button>
-          <button class="gallery-toggle-button" type="button" data-gallery-type="interior">Interior</button>
-        </div>
+</main>
+<!-- CTA Section -->
+<section class="bg-surface-container-lowest py-20 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary rounded-full blur-[120px]"></div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center relative z-10">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg uppercase mb-6">Ready for the transformation?</h2>
+<p class="mb-10 text-on-surface-variant font-body-md">Our slots fill up fast. Secure your vehicle's appointment today.</p>
+<a class="bg-primary text-on-primary px-12 py-4 font-label-sm text-label-sm uppercase tracking-[0.2em] font-bold hover:bg-primary-container hover:shadow-[0_0_30px_rgba(159,202,255,0.4)] transition-all duration-500 inline-block" href="contact.html">
+                Book Professional Detailing
+            </a>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-unit-gutter bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto items-center">
+<div class="order-2 md:order-1 font-body-md text-body-md text-on-surface-variant opacity-80 hover:opacity-100 transition-opacity">
+                © 2026 VALENCE DETAILS. EXPERT CARE EVERY TIME.
+            </div>
+<div class="order-1 md:order-2 flex justify-center mb-6 md:mb-0">
+<span class="font-display-lg text-headline-lg-mobile text-on-surface tracking-tighter uppercase">VALENCE DETAILS</span>
+</div>
+<div class="order-3 flex md:justify-end gap-gutter flex-wrap">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-200" href="https://www.instagram.com/valence.details?igsh=MXE2MXFuZmtmMmszag==">Instagram</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-200" href="contact.html">Contact Us</a>
+</div>
+</div>
+</footer>
+<script>
+        function switchTab(type) {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const exteriorItems = document.querySelectorAll('.exterior-item');
+            const interiorItems = document.querySelectorAll('.interior-item');
 
-        <div class="gallery-grid" id="galleryGrid"></div>
+            tabs.forEach(tab => {
+                if(tab.dataset.tab === type) {
+                    tab.classList.add('active-tab');
+                    tab.classList.remove('text-on-surface-variant');
+                } else {
+                    tab.classList.remove('active-tab');
+                    tab.classList.add('text-on-surface-variant');
+                }
+            });
 
-        <div class="pagination" id="galleryPagination">
-          <button class="button" id="galleryPrev" type="button">Previous</button>
-          <span id="galleryPageLabel">Page 1</span>
-          <button class="button" id="galleryNext" type="button">Next</button>
-        </div>
-      </section>
-    </main>
+            if(type === 'exterior') {
+                exteriorItems.forEach(el => el.classList.remove('hidden'));
+                interiorItems.forEach(el => el.classList.add('hidden'));
+            } else {
+                exteriorItems.forEach(el => el.classList.add('hidden'));
+                interiorItems.forEach(el => el.classList.remove('hidden'));
+                // Note: Interior layout could be improved for mobile in JS but grid-cols handle it
+                document.getElementById('gallery-grid').className = "grid grid-cols-1 md:grid-cols-2 gap-gutter min-h-[400px]";
+            }
 
-    <script src="script.js"></script>
-  </body>
-</html>
+            if(type === 'exterior') {
+                document.getElementById('gallery-grid').className = "grid grid-cols-1 md:grid-cols-12 gap-gutter min-h-[800px]";
+            }
+        }
+
+        // Add a micro-glow interaction to the cursor (optional visual flair)
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.glass-card');
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                if (x > 0 && y > 0 && x < rect.width && y < rect.height) {
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                }
+            });
+        });
+    </script>
+</body></html>
