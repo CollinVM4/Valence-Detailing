@@ -160,17 +160,20 @@
         }
 
         .mobile-menu-link {
-            font-size: 15px;
-            line-height: 1.2;
-            letter-spacing: 0.08em;
-            padding-top: 0.35rem;
-            padding-bottom: 0.35rem;
+            font-size: 18px;
+            line-height: 1.25;
+            letter-spacing: 0.06em;
+            min-height: 56px;
+            display: flex;
+            align-items: center;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
         }
 
         .mobile-menu-cta {
-            font-size: 15px;
+            font-size: 17px;
             letter-spacing: 0.12em;
-            min-height: 52px;
+            min-height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -178,12 +181,6 @@
 
         .mobile-menu-toggle .material-symbols-outlined {
             font-size: 30px;
-        }
-
-        .mobile-sticky-cta {
-            font-size: 14px;
-            letter-spacing: 0.14em;
-            min-height: 56px;
         }
 
         @media (max-width: 767px) {
@@ -210,10 +207,6 @@
         }
 
         html.force-mobile .mobile-menu-panel.is-open {
-            display: block !important;
-        }
-
-        html.force-mobile .mobile-sticky-cta {
             display: block !important;
         }
 
@@ -245,8 +238,8 @@
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
-<div class="mobile-menu mobile-menu-panel hidden md:hidden px-5 py-4" id="mobile-menu">
-<div class="flex flex-col gap-4">
+<div class="mobile-menu mobile-menu-panel hidden md:hidden px-5 py-6" id="mobile-menu">
+<div class="flex flex-col gap-5">
 <a class="mobile-menu-link text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="index.html">Home</a>
 <a class="mobile-menu-link text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="gallery.html">Gallery</a>
 <a class="mobile-menu-link text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="services.html">Services</a>
@@ -385,7 +378,6 @@
 </div>
 </section>
 </main>
-<a class="mobile-sticky-cta fixed bottom-4 left-5 right-5 md:hidden bg-primary text-on-primary-container font-label-sm text-label-sm font-bold uppercase tracking-[0.15em] py-4 text-center z-50 shadow-[0_0_22px_rgba(0,153,255,0.45)]" href="#booking-form">Book Now</a>
 <!-- Footer -->
 <footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20">
 <div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-12 w-full max-w-container-max mx-auto">
