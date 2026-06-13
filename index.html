@@ -1,44 +1,281 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Valence Details | Home</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="header-inner">
-        <a class="logo" href="index.html" aria-label="Valence Detailing home">VALENCE DETAILS</a>
-        <button
-          class="menu-button"
-          id="menuButton"
-          aria-expanded="false"
-          aria-controls="siteNav"
-          aria-label="Toggle navigation"
-        >
-          ☰
-        </button>
-        <nav class="site-nav" id="siteNav" aria-label="Main navigation">
-          <a href="index.html">Home</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="services.html">Services</a>
-        </nav>
-      </div>
-    </header>
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>VALENCE DETAILS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&amp;family=JetBrains+Mono:wght@500&amp;family=Hanken+Grotesk:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#343539",
+                    "on-secondary-container": "#b7b5b4",
+                    "on-secondary": "#313030",
+                    "outline-variant": "#3f4753",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-error": "#690005",
+                    "on-surface-variant": "#bfc7d5",
+                    "surface-container": "#1e1f23",
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-container-low": "#1a1b1f",
+                    "tertiary": "#c9c6c5",
+                    "surface-container-lowest": "#0d0e12",
+                    "secondary": "#c8c6c5",
+                    "tertiary-container": "#969494",
+                    "on-tertiary": "#313030",
+                    "tertiary-fixed-dim": "#c9c6c5",
+                    "on-secondary-fixed-variant": "#474746",
+                    "inverse-primary": "#0061a5",
+                    "surface-container-high": "#292a2e",
+                    "on-tertiary-container": "#2e2d2d",
+                    "inverse-surface": "#e3e2e7",
+                    "surface": "#121317",
+                    "surface-tint": "#9fcaff",
+                    "on-primary-container": "#002f54",
+                    "on-primary": "#003259",
+                    "background": "#121317",
+                    "outline": "#89919e",
+                    "on-background": "#e3e2e7",
+                    "surface-dim": "#121317",
+                    "error-container": "#93000a",
+                    "surface-container-highest": "#343539",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "on-surface": "#e3e2e7",
+                    "secondary-container": "#474746",
+                    "inverse-on-surface": "#2f3034",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "primary": "#9fcaff",
+                    "tertiary-fixed": "#e5e2e1",
+                    "primary-container": "#0099ff",
+                    "surface-bright": "#38393d",
+                    "primary-fixed-dim": "#9fcaff",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-fixed": "#001d36",
+                    "on-tertiary-fixed-variant": "#474646",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#d2e4ff",
+                    "on-primary-fixed-variant": "#00497e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "margin-desktop": "80px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "label-sm": ["JetBrains Mono"],
+                    "display-lg": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "body-md": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(159, 202, 255, 0.1);
+        }
+        
+        .glowing-border {
+            border: 1px solid rgba(159, 202, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .glowing-border:hover {
+            border-color: #9fcaff;
+            box-shadow: 0 0 15px rgba(159, 202, 255, 0.3);
+        }
 
-    <main>
-      <section class="section">
-        <div class="carousel" id="homeCarousel">
-          <button class="carousel-button" type="button" id="carouselPrev" aria-label="Previous photo">‹</button>
-          <img id="carouselImage" class="carousel-image" src="" alt="Detailed vehicle" />
-          <button class="carousel-button" type="button" id="carouselNext" aria-label="Next photo">›</button>
-        </div>
-        <p id="carouselCaption" class="carousel-caption"></p>
-        <a id="homeBookNowButton" class="button home-book-now" href="services.html">BOOK NOW</a>
-      </section>
-    </main>
+        .text-glow {
+            text-shadow: 0 0 10px rgba(159, 202, 255, 0.5);
+        }
 
-    <script src="script.js"></script>
-  </body>
-</html>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        @keyframes scanline {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+        
+        .scanline {
+            background: linear-gradient(to bottom, transparent, rgba(159, 202, 255, 0.05), transparent);
+            animation: scanline 8s linear infinite;
+        }
+
+        .hero-zoom {
+            transition: transform 12s ease-out;
+        }
+        .hero-container:hover .hero-zoom {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary-fixed overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-xl">
+<div class="flex justify-between items-center px-6 md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-display-lg text-headline-lg-mobile md:text-headline-lg tracking-tighter uppercase text-primary dark:text-primary">
+                VALENCE DETAILS
+            </div>
+<div class="hidden md:flex items-center space-gap-gutter gap-8">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-sm text-label-sm" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="gallery.html">Gallery</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="services.html">Services</a>
+<a class="bg-primary text-on-primary-container px-6 py-2 font-label-sm text-label-sm font-bold uppercase transition-transform active:scale-90 hover:bg-primary-container" href="contact.html">Book Now</a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main>
+<!-- Hero Section -->
+<section class="relative h-[85vh] w-full overflow-hidden hero-container">
+<div class="absolute inset-0 z-0">
+<img alt="Hero Background" class="w-full h-full object-cover hero-zoom" src="media/carosuel.png">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+<div class="absolute inset-0 scanline pointer-events-none"></div>
+</div>
+<div class="relative z-10 h-full flex flex-col justify-center px-6 md:px-margin-desktop max-w-container-max mx-auto">
+<div class="max-w-3xl space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 glass rounded-full border border-primary/20 transition-all duration-700 opacity-100">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em]">SERVING THE GREATER ORLANDO AREA</span>
+</div>
+<h1 class="font-display-lg text-4xl md:text-display-lg text-on-surface leading-tight">
+                        PRECISION <span class="text-primary italic">CRAFTED</span><br>AESTHETICS.
+                    </h1>
+<p class="text-on-surface-variant max-w-xl text-lg md:text-xl font-body-md leading-relaxed">
+                        Beyond detailing. We engineer a visual experience that reflects the raw power and meticulous design of your vehicle.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<a class="bg-primary text-black font-headline-lg-mobile uppercase px-10 py-4 font-bold scale-100 hover:scale-105 active:scale-95 transition-all shadow-[0_0_30px_rgba(159,202,255,0.3)] text-center" href="contact.html">
+                            Book Your Session
+                        </a>
+<a class="glowing-border glass text-on-surface font-headline-lg-mobile uppercase px-10 py-4 font-bold transition-all duration-700 opacity-100 text-center" href="gallery.html">
+                            View Gallery
+                        </a>
+</div>
+</div>
+</div>
+<!-- Logo Floating Background -->
+<div class="absolute bottom-10 right-10 w-64 md:w-96 opacity-20 pointer-events-none grayscale brightness-150">
+<img alt="Floating Logo" class="w-full h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-aSwHO87hbskrubBZDlDYVDU81qCIhrLJp6VzINt-mS0BInj2tD-A0yU2IaZT31uJLMkDKIeshjvBABSXUX8OXSHJLEOdrR7GMo2pZa9z2P7GARmHZjpSypMmYVa8K7nD0UZZhcPZBOnL-rfLdQJIwF-2LbyNavaU_CComY_Ux8gPxYBK4IQej4eakbbDQDfF_KBytGaGzKEBhYc7CesnQBZpQiQq2q8sOkd3Ytq7UnyL2Zjb6uyyZvboXzYP-IyLDrc">
+</div>
+</section>
+<!-- Logo/About Bento Grid -->
+
+<!-- Services Showcase -->
+
+<!-- Booking CTA Section -->
+<section class="relative py-32 overflow-hidden bg-background">
+<div class="absolute inset-0 z-0 opacity-10">
+
+</div>
+<div class="px-6 md:px-margin-desktop max-w-container-max mx-auto relative z-10 text-center">
+<h2 class="font-display-lg text-4xl md:text-display-lg text-on-surface mb-8">READY TO IGNITE?</h2>
+<p class="text-on-surface-variant text-xl mb-12 max-w-2xl mx-auto">
+                    Secure your slot for the ultimate automotive transformation. Our calendar fills up quickly with limited weekly sessions.
+                </p>
+<div class="flex flex-col md:flex-row justify-center gap-6">
+<a class="bg-primary text-black font-headline-lg-mobile uppercase px-12 py-5 font-bold shadow-[0_0_40px_rgba(159,202,255,0.4)] hover:bg-primary-container transition-colors" href="contact.html">
+                        Book Now
+                    </a>
+
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 w-full py-12 mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-6 md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col gap-6">
+<div class="font-display-lg text-headline-lg-mobile text-on-surface">
+                    VALENCE DETAILS
+                </div>
+<p class="text-on-surface-variant font-body-md max-w-xs">
+                    Automotive detailing and protection specialists based in the heart of performance.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-4">
+<h4 class="font-label-sm text-label-sm text-primary uppercase">Explore</h4>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="gallery.html">Gallery</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="services.html">Services</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-sm text-label-sm text-primary uppercase">Social</h4>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="https://www.instagram.com/valence.details?igsh=MXE2MXFuZmtmMmszag==" style="transform: scale(1);">Instagram</a>
+</div>
+</div>
+<div class="flex flex-col gap-4 items-start md:items-end">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="contact.html">Contact Us</a>
+<div class="mt-8 text-on-surface-variant font-label-sm text-[10px] opacity-60">
+                    © 2026 VALENCE DETAILS. EXPERT CARE EVERY TIME.
+                </div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Micro-interactions
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.style.transform = 'scale(0.95)';
+            });
+            el.addEventListener('mouseup', () => {
+                el.style.transform = 'scale(1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = 'scale(1)';
+            });
+        });
+
+        // Intersection Observer for reveal effects
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('translate-y-10', 'opacity-0');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+
+
+</body></html>

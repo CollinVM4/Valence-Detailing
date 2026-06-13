@@ -1,0 +1,435 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Contact | VALENCE DETAILS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#0099ff",
+                        "on-secondary-fixed-variant": "#474746",
+                        "surface-dim": "#121317",
+                        "primary": "#9fcaff",
+                        "surface-container-highest": "#343539",
+                        "surface-bright": "#38393d",
+                        "surface-container": "#1e1f23",
+                        "tertiary-fixed-dim": "#c9c6c5",
+                        "outline-variant": "#3f4753",
+                        "surface": "#121317",
+                        "tertiary": "#c9c6c5",
+                        "background": "#121317",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e3e2e7",
+                        "on-primary-fixed-variant": "#00497e",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#e5e2e1",
+                        "outline": "#89919e",
+                        "inverse-surface": "#e3e2e7",
+                        "surface-container-low": "#1a1b1f",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "tertiary-container": "#969494",
+                        "secondary-container": "#474746",
+                        "surface-variant": "#343539",
+                        "surface-container-lowest": "#0d0e12",
+                        "on-secondary-container": "#b7b5b4",
+                        "primary-fixed-dim": "#9fcaff",
+                        "surface-container-high": "#292a2e",
+                        "inverse-on-surface": "#2f3034",
+                        "on-surface": "#e3e2e7",
+                        "on-secondary": "#313030",
+                        "secondary": "#c8c6c5",
+                        "on-primary-container": "#002f54",
+                        "on-tertiary": "#313030",
+                        "on-surface-variant": "#bfc7d5",
+                        "surface-tint": "#9fcaff",
+                        "primary-fixed": "#d2e4ff",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-primary": "#003259",
+                        "on-primary-fixed": "#001d36",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "inverse-primary": "#0061a5",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-tertiary-container": "#2e2d2d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Montserrat"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "label-sm": ["JetBrains Mono"],
+                        "display-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0A;
+            color: #e3e2e7;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(159, 202, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 153, 255, 0.5);
+            box-shadow: 0 0 20px rgba(0, 153, 255, 0.1);
+        }
+        .glow-icon {
+            text-shadow: 0 0 10px #0099ff;
+        }
+        .input-ignite {
+            background: #1A1A1A;
+            border: none;
+            border-bottom: 2px solid #3f4753;
+            color: #000000 !important;
+            caret-color: #000000;
+            transition: border-color 0.4s ease;
+        }
+        .input-ignite:focus {
+            border-color: #0099ff;
+            outline: none;
+            box-shadow: none;
+        }
+        .input-ignite::placeholder {
+            color: #000000;
+            opacity: 1;
+        }
+        .input-ignite-light {
+            background: #ffffff;
+        }
+        .input-ignite option {
+            color: #000000;
+        }
+        .neon-btn {
+            background: #0099ff;
+            color: #0A0A0A;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+        .neon-btn:hover {
+            box-shadow: 0 0 25px rgba(0, 153, 255, 0.6);
+            transform: scale(1.02);
+        }
+        .kinetic-bg {
+            background-image: radial-gradient(circle at 50% 50%, rgba(0, 153, 255, 0.05) 0%, transparent 70%);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl dark:bg-surface/80 border-b border-outline-variant/30">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-display-lg text-headline-lg font-black tracking-tighter text-primary dark:text-primary">VALENCE DETAILS</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="gallery.html">Gallery</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="services.html">Services</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-sm text-label-sm" href="contact.html">Contact</a>
+</div>
+<button class="transition-all duration-300 ease-in-out active:scale-95 bg-primary-container text-on-primary-container px-6 py-2 font-label-sm text-label-sm font-bold tracking-widest">
+                BOOK NOW
+            </button>
+</div>
+</nav>
+<main class="pt-32 kinetic-bg min-h-screen">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-16 md:mb-24">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="space-y-2">
+<h1 class="font-display-lg text-headline-lg md:text-display-lg font-black uppercase leading-none">GET IN TOUCH</h1>
+</div>
+<div class="h-[2px] flex-grow bg-gradient-to-r from-primary/50 to-transparent hidden md:block mb-4 mx-12"></div>
+</div>
+</section>
+<!-- Main Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-gutter pb-24">
+<!-- Left Column: Contact Info -->
+<div class="lg:col-span-5 space-y-8">
+<div class="glass-card p-8 rounded-xl border-l-4 border-l-primary-container">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-12 tracking-widest">Connection Hub</h3>
+<div class="space-y-10">
+<div class="flex items-start gap-6 group">
+<div class="w-12 h-12 shrink-0 flex items-center justify-center rounded-lg bg-surface-container-high border border-outline-variant group-hover:border-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary-container glow-icon" data-icon="call">call</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase">Direct Line</p>
+<p class="font-headline-lg text-headline-lg-mobile md:text-headline-lg tracking-tight">407-919-5814</p>
+</div>
+</div>
+<div class="flex items-start gap-6 group">
+<button class="w-12 h-12 shrink-0 flex items-center justify-center rounded-lg bg-surface-container-high border border-outline-variant group-hover:border-primary-container transition-colors" id="copy-email-button" type="button" aria-label="Copy email address" title="Copy email address">
+<span class="material-symbols-outlined text-primary-container glow-icon" data-icon="alternate_email" id="copy-email-icon">alternate_email</span>
+</button>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase">Email</p>
+<p class="font-body-md text-md md:text-base tracking-tight break-all" id="contact-email-address">devonbeckman6@gmail.com</p>
+</div>
+</div>
+<div class="flex items-start gap-6 group">
+<div class="w-12 h-12 shrink-0 flex items-center justify-center rounded-lg bg-surface-container-high border border-outline-variant group-hover:border-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary-container glow-icon" data-icon="share">share</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-4 uppercase">Social Media</p>
+<div class="flex gap-4">
+<a class="font-label-sm text-label-sm text-on-surface hover:text-primary-container transition-colors flex items-center gap-2 bg-surface-container px-4 py-2 rounded" href="https://www.instagram.com/valence.details?igsh=MXE2MXFuZmtmMmszag==">
+                                        INSTAGRAM
+                                    </a>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<!-- Right Column: Booking Form -->
+<div class="lg:col-span-7">
+<div class="glass-card p-8 md:p-12 rounded-xl relative overflow-hidden">
+<!-- Tech background detail -->
+<div class="absolute top-0 right-0 w-32 h-32 opacity-10 pointer-events-none">
+<svg class="w-full h-full text-primary fill-current" viewBox="0 0 100 100">
+<path d="M0 0h100v100H0zM10 10v80h80V10H10z" fill-rule="evenodd"></path>
+<path d="M20 20v60h60V20H20zm10 10v40h40V30H30z"></path>
+</svg>
+</div>
+<div class="mb-12">
+<h2 class="font-headline-lg text-headline-lg uppercase mb-2">BOOK YOUR SESSION</h2>
+<p class="text-on-surface-variant max-w-md">Reserve your slot for a high-performance transformation. Our team will review your specs and contact you as soon as possible.</p>
+</div>
+<form class="space-y-8" id="booking-form">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-primary uppercase">Vehicle Year/Model</label>
+<input class="w-full input-ignite p-4 font-body-md text-on-surface rounded-none" id="vehicle-input" name="vehicle" placeholder="e.g. 2024 Porsche 911 GT3" type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-primary uppercase">Full Name</label>
+<input class="w-full input-ignite p-4 font-body-md text-on-surface rounded-none" id="name-input" name="fullName" placeholder="Driver Name" type="text">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-primary uppercase">Email Address</label>
+<input class="w-full input-ignite p-4 font-body-md text-on-surface rounded-none" id="email-input" name="email" placeholder="email@protocol.com" type="email">
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-primary uppercase">Phone Number</label>
+<input class="w-full input-ignite p-4 font-body-md text-on-surface rounded-none" id="phone-input" name="phone" placeholder="+1 (407) 000-0000" type="tel">
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-primary uppercase">Service Tier</label>
+<select class="w-full input-ignite input-ignite-light p-4 font-body-md text-on-surface appearance-none rounded-none" id="service-tier-input" name="serviceTier">
+<option>EXPRESS DETAIL *basic interior & exterior*</option>
+<option>PREMIUM FULL DETAIL</option>
+<option>PAINT CORRECTION</option>
+<option>BASIC EXTERIOR WASH ONLY</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-primary uppercase">Details</label>
+<textarea class="w-full input-ignite input-ignite-light p-4 font-body-md text-on-surface rounded-none resize-none" id="details-input" name="details" placeholder="Specific areas of concern or special requests..." rows="4"></textarea>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<button class="w-full py-6 neon-btn flex items-center justify-center gap-4 group" id="email-booking-button" type="button">
+                            INITIATE BOOKING
+                            <span class="material-symbols-outlined transition-transform group-hover:translate-x-2" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full py-6 border border-primary-container text-primary-container font-label-sm text-label-sm font-bold tracking-widest hover:bg-primary-container hover:text-on-primary-container transition-all" id="text-booking-button" type="button">
+                            TEXT BOOKING
+                        </button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- CTA Block -->
+<section class="bg-surface-container-low py-20 border-y border-outline-variant/10">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<h2 class="font-display-lg text-headline-lg md:text-display-lg font-black uppercase mb-6">READY TO TRANSFORM?</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto mb-10 font-body-md">Don't settle for average. Join the ranks of elite owners who trust Valence for electric precision in every detail.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<a class="px-12 py-4 bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold tracking-widest hover:brightness-110 transition-all" href="services.html">
+                        EXPLORE SERVICES
+                    </a>
+<a class="px-12 py-4 border border-outline text-on-surface font-label-sm text-label-sm font-bold tracking-widest hover:border-primary-container hover:text-primary transition-all" href="gallery.html">
+                        VIEW GALLERY
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-12 w-full max-w-container-max mx-auto">
+<div class="flex flex-col gap-4 mb-8 md:mb-0">
+<div class="font-display-lg text-headline-lg font-black text-on-surface">VALENCE DETAILS</div>
+<p class="font-label-sm text-label-sm text-on-secondary-fixed-variant tracking-widest">© 2026 VALENCE DETAILS. EXPERT CARE EVERYTIME.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-on-secondary-fixed-variant hover:text-on-surface transition-colors duration-200 font-label-sm text-label-sm" href="https://www.instagram.com/valence.details?igsh=MXE2MXFuZmtmMmszag==">Instagram</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for inputs
+        const inputs = document.querySelectorAll('.input-ignite');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('label').style.letterSpacing = '0.2em';
+                input.parentElement.querySelector('label').style.transition = 'all 0.4s ease';
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.querySelector('label').style.letterSpacing = '0.1em';
+            });
+        });
+
+        const copyEmailButton = document.getElementById('copy-email-button');
+        const copyEmailIcon = document.getElementById('copy-email-icon');
+        const contactEmailAddress = document.getElementById('contact-email-address');
+        const bookingForm = document.getElementById('booking-form');
+        const emailBookingButton = document.getElementById('email-booking-button');
+        const textBookingButton = document.getElementById('text-booking-button');
+        const bookingEmailAddress = 'devonbeckman6@gmail.com';
+
+        async function copyEmailAddress() {
+            if (!contactEmailAddress) {
+                return;
+            }
+
+            const emailAddress = contactEmailAddress.textContent.trim();
+
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(emailAddress);
+                } else {
+                    const tempInput = document.createElement('input');
+                    tempInput.value = emailAddress;
+                    document.body.appendChild(tempInput);
+                    tempInput.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempInput);
+                }
+
+                copyEmailButton.title = 'Copied';
+                copyEmailButton.setAttribute('aria-label', 'Email address copied');
+                copyEmailIcon.textContent = 'check';
+
+                window.setTimeout(() => {
+                    copyEmailButton.title = 'Copy email address';
+                    copyEmailButton.setAttribute('aria-label', 'Copy email address');
+                    copyEmailIcon.textContent = 'alternate_email';
+                }, 1600);
+            } catch (error) {
+                copyEmailButton.title = 'Copy failed';
+            }
+        }
+
+        if (copyEmailButton) {
+            copyEmailButton.addEventListener('click', copyEmailAddress);
+        }
+
+        function buildBookingDraft() {
+            if (!bookingForm) {
+                return null;
+            }
+
+            const formData = new FormData(bookingForm);
+            const vehicle = (formData.get('vehicle') || '').toString().trim() || 'Not provided';
+            const fullName = (formData.get('fullName') || '').toString().trim() || 'Not provided';
+            const email = (formData.get('email') || '').toString().trim() || 'Not provided';
+            const phone = (formData.get('phone') || '').toString().trim() || 'Not provided';
+            const serviceTier = (formData.get('serviceTier') || '').toString().trim() || 'Not provided';
+            const details = (formData.get('details') || '').toString().trim() || 'No additional details provided';
+            const subject = `Booking Request - ${fullName}`;
+            const message = [
+                'VALENCE DETAILS BOOKING REQUEST',
+                '',
+                `Full Name: ${fullName}`,
+                `Vehicle Year/Model: ${vehicle}`,
+                `Email Address: ${email}`,
+                `Phone Number: ${phone}`,
+                `Service Tier: ${serviceTier}`,
+                '',
+                'Details:',
+                details
+            ].join('\n');
+
+            return { subject, message };
+        }
+
+        if (bookingForm) {
+            bookingForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+            });
+        }
+
+        if (emailBookingButton) {
+            emailBookingButton.addEventListener('click', () => {
+                const draft = buildBookingDraft();
+                if (!draft) {
+                    return;
+                }
+
+                const gmailComposeLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(bookingEmailAddress)}&su=${encodeURIComponent(draft.subject)}&body=${encodeURIComponent(draft.message)}`;
+                const composeWindow = window.open(gmailComposeLink, '_blank', 'noopener,noreferrer');
+
+                if (!composeWindow) {
+                    window.location.href = gmailComposeLink;
+                }
+            });
+        }
+
+        if (textBookingButton) {
+            textBookingButton.addEventListener('click', () => {
+                const draft = buildBookingDraft();
+                if (!draft) {
+                    return;
+                }
+
+                const smsNumber = '+14079195814';
+                const separator = /iPhone|iPad|iPod/i.test(navigator.userAgent) ? '&' : '?';
+                const smsLink = `sms:${smsNumber}${separator}body=${encodeURIComponent(draft.message)}`;
+                window.location.href = smsLink;
+            });
+        }
+    </script>
+
+
+</body></html>
