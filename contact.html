@@ -147,12 +147,23 @@
         .kinetic-bg {
             background-image: radial-gradient(circle at 50% 50%, rgba(0, 153, 255, 0.05) 0%, transparent 70%);
         }
+
+        .mobile-menu {
+            background: rgba(13, 14, 18, 0.96);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(159, 202, 255, 0.2);
+        }
+
+        .menu-glow {
+            box-shadow: 0 0 18px rgba(0, 153, 255, 0.35);
+        }
     </style>
 </head>
 <body class="font-body-md text-body-md">
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl dark:bg-surface/80 border-b border-outline-variant/30">
-<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex justify-between items-center px-5 md:px-margin-desktop py-4 max-w-container-max mx-auto">
 <div class="font-display-lg text-headline-lg font-black tracking-tighter text-primary dark:text-primary">VALENCE DETAILS</div>
 <div class="hidden md:flex items-center space-x-8">
 <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="index.html">Home</a>
@@ -160,14 +171,26 @@
 <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="services.html">Services</a>
 <a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-sm text-label-sm" href="contact.html">Contact</a>
 </div>
-<button class="transition-all duration-300 ease-in-out active:scale-95 bg-primary-container text-on-primary-container px-6 py-2 font-label-sm text-label-sm font-bold tracking-widest">
+<a class="hidden md:inline-flex transition-all duration-300 ease-in-out active:scale-95 bg-primary-container text-on-primary-container px-6 py-3 font-label-sm text-label-sm font-bold tracking-widest items-center" href="#booking-form">
                 BOOK NOW
-            </button>
+            </a>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation" class="md:hidden text-primary p-2 border border-primary/40 rounded-lg menu-glow" id="mobile-menu-button" type="button">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="mobile-menu hidden md:hidden px-5 py-4" id="mobile-menu">
+<div class="flex flex-col gap-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="gallery.html">Gallery</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="services.html">Services</a>
+<a class="text-primary font-bold font-label-sm text-label-sm uppercase" href="contact.html">Contact</a>
+<a class="bg-primary text-on-primary-container px-6 py-3 font-label-sm text-label-sm font-bold uppercase text-center" href="#booking-form">Book Now</a>
+</div>
 </div>
 </nav>
-<main class="pt-32 kinetic-bg min-h-screen">
+<main class="pt-32 kinetic-bg min-h-screen pb-28 md:pb-0">
 <!-- Hero Section -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-16 md:mb-24">
+<section class="max-w-container-max mx-auto px-5 md:px-margin-desktop mb-16 md:mb-24">
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
 <div class="space-y-2">
 <h1 class="font-display-lg text-headline-lg md:text-display-lg font-black uppercase leading-none">GET IN TOUCH</h1>
@@ -176,12 +199,12 @@
 </div>
 </section>
 <!-- Main Grid -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-gutter pb-24">
+<section class="max-w-container-max mx-auto px-5 md:px-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-gutter pb-24">
 <!-- Left Column: Contact Info -->
 <div class="lg:col-span-5 space-y-8">
 <div class="glass-card p-8 rounded-xl border-l-4 border-l-primary-container">
-<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-12 tracking-widest">Connection Hub</h3>
-<div class="space-y-10">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-8 tracking-widest">Connection Hub</h3>
+<div class="space-y-7">
 <div class="flex items-start gap-6 group">
 <div class="w-12 h-12 shrink-0 flex items-center justify-center rounded-lg bg-surface-container-high border border-outline-variant group-hover:border-primary-container transition-colors">
 <span class="material-symbols-outlined text-primary-container glow-icon" data-icon="call">call</span>
@@ -236,26 +259,26 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 <div class="space-y-2">
 <label class="font-label-sm text-label-sm text-primary uppercase">Vehicle Year/Model</label>
-<input class="w-full input-ignite p-4 font-body-md text-on-surface rounded-none" id="vehicle-input" name="vehicle" placeholder="e.g. 2024 Porsche 911 GT3" type="text">
+<input class="w-full input-ignite p-4 min-h-[48px] font-body-md text-on-surface rounded-none" id="vehicle-input" name="vehicle" placeholder="e.g. 2024 Porsche 911 GT3" type="text">
 </div>
 <div class="space-y-2">
 <label class="font-label-sm text-label-sm text-primary uppercase">Full Name</label>
-<input class="w-full input-ignite p-4 font-body-md text-on-surface rounded-none" id="name-input" name="fullName" placeholder="Driver Name" type="text">
+<input class="w-full input-ignite p-4 min-h-[48px] font-body-md text-on-surface rounded-none" id="name-input" name="fullName" placeholder="Driver Name" type="text">
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 <div class="space-y-2">
 <label class="font-label-sm text-label-sm text-primary uppercase">Email Address</label>
-<input class="w-full input-ignite p-4 font-body-md text-on-surface rounded-none" id="email-input" name="email" placeholder="email@protocol.com" type="email">
+<input class="w-full input-ignite p-4 min-h-[48px] font-body-md text-on-surface rounded-none" id="email-input" name="email" placeholder="email@protocol.com" type="email">
 </div>
 <div class="space-y-2">
 <label class="font-label-sm text-label-sm text-primary uppercase">Phone Number</label>
-<input class="w-full input-ignite p-4 font-body-md text-on-surface rounded-none" id="phone-input" name="phone" placeholder="+1 (407) 000-0000" type="tel">
+<input class="w-full input-ignite p-4 min-h-[48px] font-body-md text-on-surface rounded-none" id="phone-input" name="phone" placeholder="+1 (407) 000-0000" type="tel">
 </div>
 </div>
 <div class="space-y-2">
 <label class="font-label-sm text-label-sm text-primary uppercase">Service Tier</label>
-<select class="w-full input-ignite input-ignite-light p-4 font-body-md text-on-surface appearance-none rounded-none" id="service-tier-input" name="serviceTier">
+<select class="w-full input-ignite input-ignite-light p-4 min-h-[48px] font-body-md text-on-surface appearance-none rounded-none" id="service-tier-input" name="serviceTier">
 <option>EXPRESS DETAIL *basic interior & exterior*</option>
 <option>PREMIUM FULL DETAIL</option>
 <option>PAINT CORRECTION</option>
@@ -264,14 +287,14 @@
 </div>
 <div class="space-y-2">
 <label class="font-label-sm text-label-sm text-primary uppercase">Details</label>
-<textarea class="w-full input-ignite input-ignite-light p-4 font-body-md text-on-surface rounded-none resize-none" id="details-input" name="details" placeholder="Specific areas of concern or special requests..." rows="4"></textarea>
+<textarea class="w-full input-ignite input-ignite-light p-4 min-h-[120px] font-body-md text-on-surface rounded-none resize-none" id="details-input" name="details" placeholder="Specific areas of concern or special requests..." rows="4"></textarea>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<button class="w-full py-6 neon-btn flex items-center justify-center gap-4 group" id="email-booking-button" type="button">
+<button class="w-full py-4 min-h-[48px] neon-btn flex items-center justify-center gap-4 group" id="email-booking-button" type="button">
                             INITIATE BOOKING
                             <span class="material-symbols-outlined transition-transform group-hover:translate-x-2" data-icon="arrow_forward">arrow_forward</span>
 </button>
-<button class="w-full py-6 border border-primary-container text-primary-container font-label-sm text-label-sm font-bold tracking-widest hover:bg-primary-container hover:text-on-primary-container transition-all" id="text-booking-button" type="button">
+<button class="w-full py-4 min-h-[48px] border border-primary-container text-primary-container font-label-sm text-label-sm font-bold tracking-widest hover:bg-primary-container hover:text-on-primary-container transition-all" id="text-booking-button" type="button">
                             TEXT BOOKING
                         </button>
 </div>
@@ -295,6 +318,7 @@
 </div>
 </section>
 </main>
+<a class="fixed bottom-4 left-5 right-5 md:hidden bg-primary text-on-primary-container font-label-sm text-label-sm font-bold uppercase tracking-[0.15em] py-4 text-center z-50 shadow-[0_0_22px_rgba(0,153,255,0.45)]" href="#booking-form">Book Now</a>
 <!-- Footer -->
 <footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20">
 <div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-12 w-full max-w-container-max mx-auto">
@@ -308,6 +332,17 @@
 </div>
 </footer>
 <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                mobileMenuButton.setAttribute('aria-expanded', String(!isExpanded));
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
         // Micro-interaction for inputs
         const inputs = document.querySelectorAll('.input-ignite');
         inputs.forEach(input => {

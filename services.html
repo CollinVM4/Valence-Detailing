@@ -99,7 +99,7 @@
         .snap-container {
             scroll-snap-type: y mandatory;
             overflow-y: scroll;
-            height: 100vh;
+            height: calc(100svh - 73px);
             scroll-behavior: smooth;
         }
         .snap-section {
@@ -129,12 +129,29 @@
         ::-webkit-scrollbar-track { background: #121317; }
         ::-webkit-scrollbar-thumb { background: #343539; border-radius: 2px; }
         ::-webkit-scrollbar-thumb:hover { background: #9fcaff; }
+
+        .mobile-menu {
+            background: rgba(13, 14, 18, 0.96);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(159, 202, 255, 0.2);
+        }
+
+        .menu-glow {
+            box-shadow: 0 0 18px rgba(0, 153, 255, 0.35);
+        }
+
+        @media (min-width: 768px) {
+            .snap-container {
+                height: calc(100vh - 73px);
+            }
+        }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body-md overflow-hidden">
 <!-- TopNavBar -->
 <nav class="sticky top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-xl">
-<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex justify-between items-center px-5 md:px-margin-desktop py-4 max-w-container-max mx-auto">
 <div class="font-display-lg text-headline-lg tracking-tighter uppercase text-primary dark:text-primary">VALENCE DETAILS</div>
 <div class="hidden md:flex gap-gutter items-center">
 <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="index.html">Home</a>
@@ -143,26 +160,34 @@
 <a class="font-label-sm text-label-sm bg-primary text-on-primary-container px-6 py-2 uppercase tracking-widest scale-95 active:scale-90 transition-transform hover:bg-primary/90" href="contact.html">Book Now</a>
 </div>
 <div class="md:hidden">
-<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation" class="text-primary cursor-pointer p-2 border border-primary/40 rounded-lg menu-glow" id="mobile-menu-button" type="button"><span class="material-symbols-outlined">menu</span></button>
+</div>
+</div>
+<div class="mobile-menu hidden md:hidden px-5 py-4" id="mobile-menu">
+<div class="flex flex-col gap-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="gallery.html">Gallery</a>
+<a class="text-primary font-bold font-label-sm text-label-sm uppercase" href="services.html">Services</a>
+<a class="bg-primary text-on-primary-container px-6 py-3 font-label-sm text-label-sm font-bold uppercase text-center" href="contact.html">Book Now</a>
 </div>
 </div>
 </nav>
 <!-- Main Content: Vertical Snap Scroll -->
 <main class="snap-container">
 <!-- Section 1: Express Detail -->
-<section class="snap-section flex items-center justify-start overflow-hidden bg-surface-container-lowest">
+<section class="snap-section flex items-start md:items-center justify-start overflow-hidden bg-surface-container-lowest pt-20 md:pt-0">
 <div class="absolute inset-0 z-0">
 <img class="w-full h-full object-cover opacity-40" data-alt="A macro close-up of a high-performance sports car door handle after an express detail, showing water beading perfectly on a polished obsidian black paint surface. The lighting is dramatic and moody, reflecting neon blue workshop lights in the finish. The atmosphere is professional and clinical, emphasizing the clean textures and deep gloss of the ceramic coating." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAgj3qRY5Q_CqjwYMThM-FzmSs80VsDMFhGk-xyWfHS6xxI2f3S98kY9WqdZ_26i5qqfNtPNwh88ZDI3-xzV4kiCwvtJ1jUfLsnt4H7vmsj3rN41ViVwfN18ZtFd-86-gnClNwpeSxylDCmKCdHiMhr9YA706vf2NX4J4xf1rIVtKqDY5hiEddxLFYzWF_96-gQ3SqvvSkZMuSP48FZW3snpThU_aGG1eGoUB_5-QEn7WHcy8UGqRFbg"/>
 <div class="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent"></div>
 </div>
-<div class="relative z-10 px-margin-desktop max-w-2xl">
+<div class="relative z-10 px-5 md:px-margin-desktop max-w-2xl pb-28 md:pb-0">
 <div class="mb-gutter">
 <span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.3em]">Tier 01</span>
-<h2 class="font-display-lg text-display-lg uppercase mt-2 text-glow">Express Detail</h2>
+<h2 class="font-display-lg text-4xl md:text-display-lg uppercase mt-2 text-glow">Express Detail</h2>
 <p class="text-on-surface-variant text-lg mt-4 font-body-md">Basic interior &amp; exterior detail for the daily driver that demands a showroom shine.</p>
 </div>
 <div class="glass-panel p-gutter mb-gutter">
-<div class="grid grid-cols-2 gap-gutter mb-6 border-b border-outline-variant/30 pb-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter mb-6 border-b border-outline-variant/30 pb-4">
 <div>
 <p class="font-label-sm text-label-sm text-primary/60 uppercase">Sedan / Coupe</p>
 <p class="font-headline-lg text-headline-lg">$140</p>
@@ -191,25 +216,25 @@
 </li>
 </ul>
 </div>
-<a class="bg-primary text-on-primary font-headline-lg text-sm px-12 py-5 uppercase tracking-widest hover:bg-white transition-all duration-300 scale-95 active:scale-90 inline-block" href="contact.html">
+<a class="bg-primary text-on-primary font-headline-lg text-sm px-10 py-4 uppercase tracking-widest hover:bg-white transition-all duration-300 scale-95 active:scale-90 inline-block w-full sm:w-auto text-center" href="contact.html">
                     Secure Package
                 </a>
 </div>
 </section>
 <!-- Section 2: Premium Full Detail -->
-<section class="snap-section flex items-center justify-end overflow-hidden bg-surface-container">
+<section class="snap-section flex items-start md:items-center justify-end overflow-hidden bg-surface-container pt-20 md:pt-0">
 <div class="absolute inset-0 z-0">
 <img class="w-full h-full object-cover opacity-40" data-alt="A wide angle shot of a luxury vehicle's interior dashboard and leather seats, glowing under soft atmospheric interior lighting after a premium full detail. The leather surfaces are matte and rich, with visible stitching details. The cabin is pristine, reflecting a clinical level of cleanliness. The surrounding environment is a darkened high-end garage with hints of industrial gray and electric blue accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlUmkt7TDFugL8APWDGpZAn0Q1e4bboQWf-1S75eQUA3w-puyrWJDSGp3J67QAczlGE0qAt4jqH_2XNSrSIyEhnJlT7Et0DI6yqz3RFddaHb_1-tHPfrDmwXwQfQk9u0ZhcyK0JqULKA_lmMGOohiel07EAYTbdPQal3nZ2VhOOGl6BZ9_zDxFNgI1k5IoimlbtBaBcQeS9lxBqYHyWwFfU3TAMefPFTuPzJrdC4bM-eTwbvcC11rgaw"/>
 <div class="absolute inset-0 bg-gradient-to-l from-background via-background/60 to-transparent"></div>
 </div>
-<div class="relative z-10 px-margin-desktop max-w-2xl text-right">
+<div class="relative z-10 px-5 md:px-margin-desktop max-w-2xl text-left md:text-right pb-28 md:pb-0">
 <div class="mb-gutter">
 <span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.3em]">Tier 02</span>
-<h2 class="font-display-lg text-display-lg uppercase mt-2 text-glow">Premium Full Detail</h2>
+<h2 class="font-display-lg text-4xl md:text-display-lg uppercase mt-2 text-glow">Premium Full Detail</h2>
 <p class="text-on-surface-variant text-lg mt-4 font-body-md">Deep interior restoration and basic exterior protection for the ultimate comfort.</p>
 </div>
 <div class="glass-panel p-gutter mb-gutter text-left">
-<div class="grid grid-cols-2 gap-gutter mb-6 border-b border-outline-variant/30 pb-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter mb-6 border-b border-outline-variant/30 pb-4">
 <div>
 <p class="font-label-sm text-label-sm text-primary/60 uppercase">Sedan / Coupe</p>
 <p class="font-headline-lg text-headline-lg">$180</p>
@@ -239,21 +264,21 @@
 </ul>
 <p class="mt-6 font-label-sm text-[10px] text-on-surface-variant uppercase italic">* Price depends on condition of interior.</p>
 </div>
-<a class="bg-primary text-on-primary font-headline-lg text-sm px-12 py-5 uppercase tracking-widest hover:bg-white transition-all duration-300 scale-95 active:scale-90 inline-block" href="contact.html">
+<a class="bg-primary text-on-primary font-headline-lg text-sm px-10 py-4 uppercase tracking-widest hover:bg-white transition-all duration-300 scale-95 active:scale-90 inline-block w-full sm:w-auto text-center" href="contact.html">
                     Upgrade Now
                 </a>
 </div>
 </section>
 <!-- Section 3: Paint Correction -->
-<section class="snap-section flex items-center justify-start overflow-hidden bg-surface-container-high">
+<section class="snap-section flex items-start md:items-center justify-start overflow-hidden bg-surface-container-high pt-20 md:pt-0">
 <div class="absolute inset-0 z-0">
 <img class="w-full h-full object-cover opacity-40" data-alt="A professional detailer using a dual-action orbital polisher on the hood of a midnight blue sports car. The machine's movement creates a soft blur, while the corrected paint section shows a mirror-like reflection of professional studio lighting. The scene is high-contrast, with dark shadows and bright, sharp highlights, conveying technical precision and expert craftsmanship in a high-end detailing studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrWduISZpNAQ_hFJOpeu_DJ1nYggAK6DySQAu9pnuiFPCg9yVgDuEuUWaKqt_eyVRT7IIt-Sc-rdFCRCxY1Mrs3oQMAxTIwWLQWkOQ4CDj8uSLTtbNdtrNfCrfVIouKAG5BVkF97vaJCAYgrjA4Fir4XvKUceBa-NsTgBxXux2CwCapRrLr7GenxqYASUlXJE-mthMY3FxP5ZIPSe_K-qar7Cal8aAwG-ovQini4C2rkCb8IfCtFSLdA"/>
 <div class="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent"></div>
 </div>
-<div class="relative z-10 px-margin-desktop max-w-2xl">
+<div class="relative z-10 px-5 md:px-margin-desktop max-w-2xl pb-28 md:pb-0">
 <div class="mb-gutter">
 <span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.3em]">Tier 03</span>
-<h2 class="font-display-lg text-display-lg uppercase mt-2 text-glow">Paint Correction</h2>
+<h2 class="font-display-lg text-4xl md:text-display-lg uppercase mt-2 text-glow">Paint Correction</h2>
 <p class="text-on-surface-variant text-lg mt-4 font-body-md">Exterior detail plus clay bar &amp; machine polish to remove swirl marks and restore depth.</p>
 </div>
 <div class="glass-panel p-gutter mb-gutter">
@@ -263,38 +288,34 @@
 </div>
 <ul class="space-y-2 columns-1 md:columns-2 gap-gutter">
 <li class="flex items-center gap-3 py-1">
-<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">auto_fix_high</span>
-<span class="font-body-md text-on-surface">Iron removal &amp; Clay bar</span>
+<span class="font-body-md text-on-surface">- Iron removal &amp; Clay bar</span>
 </li>
 <li class="flex items-center gap-3 py-1">
-<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">auto_fix_high</span>
-<span class="font-body-md text-on-surface">Machine polish</span>
+<span class="font-body-md text-on-surface">- Machine polish</span>
 </li>
 <li class="flex items-center gap-3 py-1">
-<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">auto_fix_high</span>
-<span class="font-body-md text-on-surface">Alcohol wipe down</span>
+<span class="font-body-md text-on-surface">- Alcohol wipe down</span>
 </li>
 <li class="flex items-center gap-3 py-1">
-<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">auto_fix_high</span>
-<span class="font-body-md text-on-surface">Wax sealant finish</span>
+<span class="font-body-md text-on-surface">- Wax sealant finish</span>
 </li>
 </ul>
 </div>
-<a class="bg-primary text-on-primary font-headline-lg text-sm px-12 py-5 uppercase tracking-widest hover:bg-white transition-all duration-300 scale-95 active:scale-90 inline-block" href="contact.html">
+<a class="bg-primary text-on-primary font-headline-lg text-sm px-10 py-4 uppercase tracking-widest hover:bg-white transition-all duration-300 scale-95 active:scale-90 inline-block w-full sm:w-auto text-center" href="contact.html">
                     Consult Detailing Specialist
                 </a>
 </div>
 </section>
 <!-- Section 4: Add-Ons & Footer -->
 <section class="snap-section flex flex-col justify-between bg-surface-container-lowest overflow-y-auto">
-<div class="px-margin-desktop py-gutter flex-1 flex flex-col justify-center">
+<div class="px-5 md:px-margin-desktop py-gutter flex-1 flex flex-col justify-center pb-28 md:pb-gutter">
 <div class="max-w-container-max mx-auto w-full">
 <h2 class="font-display-lg text-headline-lg uppercase mb-gutter text-primary tracking-widest">Performance Add-Ons</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter"><!-- Engine Bay -->
 <div class="glass-panel p-6 flex flex-col justify-between hover:translate-y-[-4px] transition-transform">
 <div>
 <span class="font-label-sm text-label-sm text-primary/40 block mb-2">OPTIONAL</span>
-<h4 class="font-headline-lg text-lg uppercase mb-1">Engine Bay</h4>
+<h4 class="font-headline-lg text-lg uppercase mb-1">Engine Bay Detail</h4>
 </div>
 <div class="flex justify-between items-end mt-8">
 <span class="font-label-sm text-label-sm text-on-surface-variant">FROM</span>
@@ -305,7 +326,7 @@
 <div class="glass-panel p-6 flex flex-col justify-between hover:translate-y-[-4px] transition-transform">
 <div>
 <span class="font-label-sm text-label-sm text-primary/40 block mb-2">OPTIONAL</span>
-<h4 class="font-headline-lg text-lg uppercase mb-1">Headlight Resto</h4>
+<h4 class="font-headline-lg text-lg uppercase mb-1">Headlight Restoration</h4>
 </div>
 <div class="flex justify-between items-end mt-8">
 <span class="font-label-sm text-label-sm text-on-surface-variant">FIXED</span>
@@ -327,7 +348,7 @@
 <div class="glass-panel p-6 flex flex-col justify-between hover:translate-y-[-4px] transition-transform">
 <div>
 <span class="font-label-sm text-label-sm text-primary/40 block mb-2">OPTIONAL</span>
-<h4 class="font-headline-lg text-lg uppercase mb-1">Glass Protect</h4>
+<h4 class="font-headline-lg text-lg uppercase mb-1">Glass Protection</h4>
 </div>
 <div class="flex justify-between items-end mt-8">
 <span class="font-label-sm text-label-sm text-on-surface-variant">FIXED</span>
@@ -338,7 +359,7 @@
 <div class="glass-panel p-6 flex flex-col justify-between hover:translate-y-[-4px] transition-transform">
 <div>
 <span class="font-label-sm text-label-sm text-primary/40 block mb-2">OPTIONAL</span>
-<h4 class="font-headline-lg text-lg uppercase mb-1">Pet Hair</h4>
+<h4 class="font-headline-lg text-lg uppercase mb-1">Pet Hair Removal</h4>
 </div>
 <div class="flex justify-between items-end mt-8">
 <span class="font-label-sm text-label-sm text-on-surface-variant">FROM</span>
@@ -371,7 +392,7 @@
 </div>
 <!-- Footer -->
 <footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 w-full py-unit-gutter">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto items-center">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-5 md:px-margin-desktop max-w-container-max mx-auto items-center">
 <div class="font-display-lg text-headline-lg-mobile text-on-surface">VALENCE DETAILS</div>
 <div class="text-center md:text-left flex flex-col gap-2">
 <p class="font-body-md text-body-md text-on-surface-variant uppercase tracking-tighter opacity-80">© 2026 VALENCE DETAILS. EXPERT CARE EVERY TIME.</p>
@@ -386,8 +407,20 @@
 </footer>
 </section>
 </main>
+<a class="fixed bottom-4 left-5 right-5 md:hidden bg-primary text-on-primary-container font-label-sm text-label-sm font-bold uppercase tracking-[0.15em] py-4 text-center z-50 shadow-[0_0_22px_rgba(0,153,255,0.45)]" href="contact.html">Book Now</a>
 <!-- Interactive Scripts -->
 <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                mobileMenuButton.setAttribute('aria-expanded', String(!isExpanded));
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
         // Smooth scroll handling for interactions if needed
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
