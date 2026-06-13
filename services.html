@@ -99,13 +99,13 @@
         .snap-container {
             scroll-snap-type: y mandatory;
             overflow-y: scroll;
-            height: calc(100svh - 73px);
+            height: calc(100svh - 53px);
             scroll-behavior: smooth;
         }
         .snap-section {
             scroll-snap-align: start;
             scroll-snap-stop: always;
-            height: 100vh;
+            height: calc(100svh - 53px);
             position: relative;
         }
         .glass-panel {
@@ -205,6 +205,10 @@
             .snap-container {
                 height: calc(100vh - 73px);
             }
+
+            .snap-section {
+                height: calc(100vh - 73px);
+            }
         }
     </style>
 </head>
@@ -240,7 +244,7 @@
 <img class="w-full h-full object-cover opacity-40" data-alt="A macro close-up of a high-performance sports car door handle after an express detail, showing water beading perfectly on a polished obsidian black paint surface. The lighting is dramatic and moody, reflecting neon blue workshop lights in the finish. The atmosphere is professional and clinical, emphasizing the clean textures and deep gloss of the ceramic coating." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAgj3qRY5Q_CqjwYMThM-FzmSs80VsDMFhGk-xyWfHS6xxI2f3S98kY9WqdZ_26i5qqfNtPNwh88ZDI3-xzV4kiCwvtJ1jUfLsnt4H7vmsj3rN41ViVwfN18ZtFd-86-gnClNwpeSxylDCmKCdHiMhr9YA706vf2NX4J4xf1rIVtKqDY5hiEddxLFYzWF_96-gQ3SqvvSkZMuSP48FZW3snpThU_aGG1eGoUB_5-QEn7WHcy8UGqRFbg"/>
 <div class="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent"></div>
 </div>
-<div class="relative z-10 px-5 md:px-margin-desktop max-w-2xl pb-28 md:pb-0">
+<div class="relative z-10 px-5 md:px-margin-desktop max-w-2xl pb-6 md:pb-0">
 <div class="mb-gutter">
 <span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.3em]">Tier 01</span>
 <h2 class="font-display-lg text-4xl md:text-display-lg uppercase mt-2 text-glow">Express Detail</h2>
@@ -287,7 +291,7 @@
 <img class="w-full h-full object-cover opacity-40" data-alt="A wide angle shot of a luxury vehicle's interior dashboard and leather seats, glowing under soft atmospheric interior lighting after a premium full detail. The leather surfaces are matte and rich, with visible stitching details. The cabin is pristine, reflecting a clinical level of cleanliness. The surrounding environment is a darkened high-end garage with hints of industrial gray and electric blue accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlUmkt7TDFugL8APWDGpZAn0Q1e4bboQWf-1S75eQUA3w-puyrWJDSGp3J67QAczlGE0qAt4jqH_2XNSrSIyEhnJlT7Et0DI6yqz3RFddaHb_1-tHPfrDmwXwQfQk9u0ZhcyK0JqULKA_lmMGOohiel07EAYTbdPQal3nZ2VhOOGl6BZ9_zDxFNgI1k5IoimlbtBaBcQeS9lxBqYHyWwFfU3TAMefPFTuPzJrdC4bM-eTwbvcC11rgaw"/>
 <div class="absolute inset-0 bg-gradient-to-l from-background via-background/60 to-transparent"></div>
 </div>
-<div class="relative z-10 px-5 md:px-margin-desktop max-w-2xl text-left md:text-right pb-28 md:pb-0">
+<div class="relative z-10 px-5 md:px-margin-desktop max-w-2xl text-left md:text-right pb-6 md:pb-0">
 <div class="mb-gutter">
 <span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.3em]">Tier 02</span>
 <h2 class="font-display-lg text-4xl md:text-display-lg uppercase mt-2 text-glow">Premium Full Detail</h2>
@@ -335,7 +339,7 @@
 <img class="w-full h-full object-cover opacity-40" data-alt="A professional detailer using a dual-action orbital polisher on the hood of a midnight blue sports car. The machine's movement creates a soft blur, while the corrected paint section shows a mirror-like reflection of professional studio lighting. The scene is high-contrast, with dark shadows and bright, sharp highlights, conveying technical precision and expert craftsmanship in a high-end detailing studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrWduISZpNAQ_hFJOpeu_DJ1nYggAK6DySQAu9pnuiFPCg9yVgDuEuUWaKqt_eyVRT7IIt-Sc-rdFCRCxY1Mrs3oQMAxTIwWLQWkOQ4CDj8uSLTtbNdtrNfCrfVIouKAG5BVkF97vaJCAYgrjA4Fir4XvKUceBa-NsTgBxXux2CwCapRrLr7GenxqYASUlXJE-mthMY3FxP5ZIPSe_K-qar7Cal8aAwG-ovQini4C2rkCb8IfCtFSLdA"/>
 <div class="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent"></div>
 </div>
-<div class="relative z-10 px-5 md:px-margin-desktop max-w-2xl pb-28 md:pb-0">
+<div class="relative z-10 px-5 md:px-margin-desktop max-w-2xl pb-6 md:pb-0">
 <div class="mb-gutter">
 <span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.3em]">Tier 03</span>
 <h2 class="font-display-lg text-4xl md:text-display-lg uppercase mt-2 text-glow">Paint Correction</h2>
@@ -368,7 +372,7 @@
 </section>
 <!-- Section 4: Add-Ons & Footer -->
 <section class="snap-section flex flex-col justify-between bg-surface-container-lowest overflow-y-auto">
-<div class="px-5 md:px-margin-desktop py-gutter flex-1 flex flex-col justify-center pb-28 md:pb-gutter">
+<div class="px-5 md:px-margin-desktop py-gutter flex-1 flex flex-col justify-center pb-6 md:pb-gutter">
 <div class="max-w-container-max mx-auto w-full">
 <h2 class="font-display-lg text-headline-lg uppercase mb-gutter text-primary tracking-widest">Performance Add-Ons</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter"><!-- Engine Bay -->
