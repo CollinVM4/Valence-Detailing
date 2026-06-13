@@ -76,9 +76,9 @@ p {
   min-width: 180px;
 }
 
-.button.home-book-now {
+#homeBookNowButton {
   display: block;
-  width: fit-content;
+  width: max-content;
   margin: 0 auto;
 }
 
