@@ -76,7 +76,7 @@ p {
   min-width: 180px;
 }
 
-.home-book-now {
+.button.home-book-now {
   display: block;
   width: fit-content;
   margin: 0 auto;
