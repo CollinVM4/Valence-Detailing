@@ -96,16 +96,24 @@
       }
     </script>
 <style>
+        :root {
+            --nav-offset: 78px;
+        }
+
         .snap-container {
             scroll-snap-type: y mandatory;
             overflow-y: scroll;
-            height: calc(100svh - 78px);
+            height: calc(100dvh - var(--nav-offset));
+            min-height: calc(100svh - var(--nav-offset));
             scroll-behavior: smooth;
+            overscroll-behavior-y: contain;
+            -webkit-overflow-scrolling: touch;
         }
         .snap-section {
             scroll-snap-align: start;
             scroll-snap-stop: always;
             height: 100%;
+            min-height: 100%;
             position: relative;
         }
         .glass-panel {
@@ -173,41 +181,6 @@
 
             .site-nav-shell {
                 min-height: 78px;
-            }
-        }
-
-        html.force-mobile .desktop-nav {
-            display: none !important;
-        }
-
-        html.force-mobile .mobile-menu-toggle {
-            display: inline-flex !important;
-        }
-
-        html.force-mobile .mobile-menu-panel {
-            display: none !important;
-        }
-
-        html.force-mobile .mobile-menu-panel.is-open {
-            display: block !important;
-        }
-
-        html.force-mobile .site-brand {
-            font-size: clamp(1.25rem, 5vw, 1.7rem);
-            line-height: 1;
-        }
-
-        html.force-mobile .site-nav-shell {
-            min-height: 78px;
-        }
-
-        @media (min-width: 768px) {
-            .snap-container {
-                height: calc(100vh - 73px);
-            }
-
-            .snap-section {
-                height: 100%;
             }
         }
 
@@ -281,7 +254,7 @@
 <!-- Main Content: Vertical Snap Scroll -->
 <main class="snap-container">
 <!-- Section 1: Express Detail -->
-<section class="snap-section tier-section flex items-start md:items-center justify-start overflow-y-auto overflow-x-hidden bg-surface-container-lowest pt-10 md:pt-0">
+<section class="snap-section tier-section flex items-start md:items-center justify-start overflow-hidden bg-surface-container-lowest pt-10 md:pt-0">
 <div class="absolute inset-0 z-0">
 <img class="w-full h-full object-cover opacity-40" data-alt="A macro close-up of a high-performance sports car door handle after an express detail, showing water beading perfectly on a polished obsidian black paint surface. The lighting is dramatic and moody, reflecting neon blue workshop lights in the finish. The atmosphere is professional and clinical, emphasizing the clean textures and deep gloss of the ceramic coating." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAgj3qRY5Q_CqjwYMThM-FzmSs80VsDMFhGk-xyWfHS6xxI2f3S98kY9WqdZ_26i5qqfNtPNwh88ZDI3-xzV4kiCwvtJ1jUfLsnt4H7vmsj3rN41ViVwfN18ZtFd-86-gnClNwpeSxylDCmKCdHiMhr9YA706vf2NX4J4xf1rIVtKqDY5hiEddxLFYzWF_96-gQ3SqvvSkZMuSP48FZW3snpThU_aGG1eGoUB_5-QEn7WHcy8UGqRFbg"/>
 <div class="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent"></div>
@@ -328,7 +301,7 @@
 </div>
 </section>
 <!-- Section 2: Premium Full Detail -->
-<section class="snap-section tier-section flex items-start md:items-center justify-end overflow-y-auto overflow-x-hidden bg-surface-container pt-10 md:pt-0">
+<section class="snap-section tier-section flex items-start md:items-center justify-end overflow-hidden bg-surface-container pt-10 md:pt-0">
 <div class="absolute inset-0 z-0">
 <img class="w-full h-full object-cover opacity-40" data-alt="A wide angle shot of a luxury vehicle's interior dashboard and leather seats, glowing under soft atmospheric interior lighting after a premium full detail. The leather surfaces are matte and rich, with visible stitching details. The cabin is pristine, reflecting a clinical level of cleanliness. The surrounding environment is a darkened high-end garage with hints of industrial gray and electric blue accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlUmkt7TDFugL8APWDGpZAn0Q1e4bboQWf-1S75eQUA3w-puyrWJDSGp3J67QAczlGE0qAt4jqH_2XNSrSIyEhnJlT7Et0DI6yqz3RFddaHb_1-tHPfrDmwXwQfQk9u0ZhcyK0JqULKA_lmMGOohiel07EAYTbdPQal3nZ2VhOOGl6BZ9_zDxFNgI1k5IoimlbtBaBcQeS9lxBqYHyWwFfU3TAMefPFTuPzJrdC4bM-eTwbvcC11rgaw"/>
 <div class="absolute inset-0 bg-gradient-to-l from-background via-background/60 to-transparent"></div>
@@ -376,7 +349,7 @@
 </div>
 </section>
 <!-- Section 3: Paint Correction -->
-<section class="snap-section tier-section flex items-start md:items-center justify-start overflow-y-auto overflow-x-hidden bg-surface-container-high pt-10 md:pt-0">
+<section class="snap-section tier-section flex items-start md:items-center justify-start overflow-hidden bg-surface-container-high pt-10 md:pt-0">
 <div class="absolute inset-0 z-0">
 <img class="w-full h-full object-cover opacity-40" data-alt="A professional detailer using a dual-action orbital polisher on the hood of a midnight blue sports car. The machine's movement creates a soft blur, while the corrected paint section shows a mirror-like reflection of professional studio lighting. The scene is high-contrast, with dark shadows and bright, sharp highlights, conveying technical precision and expert craftsmanship in a high-end detailing studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrWduISZpNAQ_hFJOpeu_DJ1nYggAK6DySQAu9pnuiFPCg9yVgDuEuUWaKqt_eyVRT7IIt-Sc-rdFCRCxY1Mrs3oQMAxTIwWLQWkOQ4CDj8uSLTtbNdtrNfCrfVIouKAG5BVkF97vaJCAYgrjA4Fir4XvKUceBa-NsTgBxXux2CwCapRrLr7GenxqYASUlXJE-mthMY3FxP5ZIPSe_K-qar7Cal8aAwG-ovQini4C2rkCb8IfCtFSLdA"/>
 <div class="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent"></div>
@@ -394,16 +367,20 @@
 </div>
 <ul class="space-y-2 columns-1 md:columns-2 gap-gutter">
 <li class="flex items-center gap-3 py-1">
-<span class="font-body-md text-on-surface">- Iron removal &amp; Clay bar</span>
+<span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-body-md text-on-surface">Iron removal &amp; Clay bar</span>
 </li>
 <li class="flex items-center gap-3 py-1">
-<span class="font-body-md text-on-surface">- Machine polish</span>
+<span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-body-md text-on-surface">Machine polish</span>
 </li>
 <li class="flex items-center gap-3 py-1">
-<span class="font-body-md text-on-surface">- Alcohol wipe down</span>
+<span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-body-md text-on-surface">Alcohol wipe down</span>
 </li>
 <li class="flex items-center gap-3 py-1">
-<span class="font-body-md text-on-surface">- Wax sealant finish</span>
+<span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-body-md text-on-surface">Wax sealant finish</span>
 </li>
 </ul>
 </div>
@@ -532,15 +509,17 @@
             link.addEventListener('click', openInstagramLink);
         });
 
-        const isMaskedMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) ||
-            (navigator.maxTouchPoints > 0 && Math.min(screen.width, screen.height) <= 900);
-
-        if (isMaskedMobile) {
-            document.documentElement.classList.add('force-mobile');
-        }
-
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
+        const siteNavShell = document.querySelector('.site-nav-shell');
+
+        function setSnapOffset() {
+            const navHeight = siteNavShell ? Math.round(siteNavShell.getBoundingClientRect().height) : 78;
+            document.documentElement.style.setProperty('--nav-offset', `${navHeight}px`);
+        }
+
+        setSnapOffset();
+        window.addEventListener('resize', setSnapOffset);
 
         if (mobileMenuButton && mobileMenu) {
             mobileMenuButton.addEventListener('click', () => {
@@ -548,6 +527,7 @@
                 mobileMenuButton.setAttribute('aria-expanded', String(!isExpanded));
                 mobileMenu.classList.toggle('hidden');
                 mobileMenu.classList.toggle('is-open');
+                setSnapOffset();
             });
         }
 
