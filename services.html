@@ -210,6 +210,48 @@
                 height: 100%;
             }
         }
+
+        @media (max-width: 767px) {
+            .tier-section {
+                padding-top: 1.75rem;
+            }
+
+            .tier-content {
+                padding-bottom: 1rem;
+            }
+
+            .tier-title {
+                font-size: 2rem;
+                line-height: 1.08;
+            }
+
+            .tier-copy {
+                font-size: 0.95rem;
+                line-height: 1.35;
+                margin-top: 0.6rem;
+            }
+
+            .tier-panel {
+                padding: 1rem;
+                margin-bottom: 0.9rem;
+            }
+
+            .tier-panel .space-y-3 > li {
+                gap: 0.5rem;
+            }
+
+            .tier-panel .font-headline-lg {
+                font-size: 1.5rem;
+                line-height: 1.15;
+            }
+
+            .tier-cta {
+                padding: 0.75rem 1rem;
+                font-size: 0.8rem;
+                letter-spacing: 0.09em;
+                min-height: 48px;
+            }
+        }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body-md overflow-hidden">
@@ -239,18 +281,18 @@
 <!-- Main Content: Vertical Snap Scroll -->
 <main class="snap-container">
 <!-- Section 1: Express Detail -->
-<section class="snap-section flex items-start md:items-center justify-start overflow-hidden bg-surface-container-lowest pt-20 md:pt-0">
+<section class="snap-section tier-section flex items-start md:items-center justify-start overflow-y-auto overflow-x-hidden bg-surface-container-lowest pt-10 md:pt-0">
 <div class="absolute inset-0 z-0">
 <img class="w-full h-full object-cover opacity-40" data-alt="A macro close-up of a high-performance sports car door handle after an express detail, showing water beading perfectly on a polished obsidian black paint surface. The lighting is dramatic and moody, reflecting neon blue workshop lights in the finish. The atmosphere is professional and clinical, emphasizing the clean textures and deep gloss of the ceramic coating." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAgj3qRY5Q_CqjwYMThM-FzmSs80VsDMFhGk-xyWfHS6xxI2f3S98kY9WqdZ_26i5qqfNtPNwh88ZDI3-xzV4kiCwvtJ1jUfLsnt4H7vmsj3rN41ViVwfN18ZtFd-86-gnClNwpeSxylDCmKCdHiMhr9YA706vf2NX4J4xf1rIVtKqDY5hiEddxLFYzWF_96-gQ3SqvvSkZMuSP48FZW3snpThU_aGG1eGoUB_5-QEn7WHcy8UGqRFbg"/>
 <div class="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent"></div>
 </div>
-<div class="relative z-10 px-5 md:px-margin-desktop max-w-2xl pb-6 md:pb-0">
+<div class="relative z-10 tier-content px-5 md:px-margin-desktop max-w-2xl pb-6 md:pb-0">
 <div class="mb-gutter">
 <span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.3em]">Tier 01</span>
-<h2 class="font-display-lg text-4xl md:text-display-lg uppercase mt-2 text-glow">Express Detail</h2>
-<p class="text-on-surface-variant text-lg mt-4 font-body-md">Basic interior &amp; exterior detail for the daily driver that demands a showroom shine.</p>
+<h2 class="font-display-lg tier-title text-4xl md:text-display-lg uppercase mt-2 text-glow">Express Detail</h2>
+<p class="text-on-surface-variant tier-copy text-lg mt-4 font-body-md">Basic interior &amp; exterior detail for the daily driver that demands a showroom shine.</p>
 </div>
-<div class="glass-panel p-gutter mb-gutter">
+<div class="glass-panel tier-panel p-gutter mb-gutter">
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter mb-6 border-b border-outline-variant/30 pb-4">
 <div>
 <p class="font-label-sm text-label-sm text-primary/60 uppercase">Sedan / Coupe</p>
@@ -280,24 +322,24 @@
 </li>
 </ul>
 </div>
-<a class="bg-primary text-on-primary font-headline-lg text-sm px-10 py-4 uppercase tracking-widest hover:bg-white transition-all duration-300 scale-95 active:scale-90 inline-block w-full sm:w-auto text-center" href="contact.html">
+<a class="bg-primary tier-cta text-on-primary font-headline-lg text-sm px-10 py-4 uppercase tracking-widest hover:bg-white transition-all duration-300 scale-95 active:scale-90 inline-block w-full sm:w-auto text-center" href="contact.html">
                     Secure Package
                 </a>
 </div>
 </section>
 <!-- Section 2: Premium Full Detail -->
-<section class="snap-section flex items-start md:items-center justify-end overflow-hidden bg-surface-container pt-20 md:pt-0">
+<section class="snap-section tier-section flex items-start md:items-center justify-end overflow-y-auto overflow-x-hidden bg-surface-container pt-10 md:pt-0">
 <div class="absolute inset-0 z-0">
 <img class="w-full h-full object-cover opacity-40" data-alt="A wide angle shot of a luxury vehicle's interior dashboard and leather seats, glowing under soft atmospheric interior lighting after a premium full detail. The leather surfaces are matte and rich, with visible stitching details. The cabin is pristine, reflecting a clinical level of cleanliness. The surrounding environment is a darkened high-end garage with hints of industrial gray and electric blue accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlUmkt7TDFugL8APWDGpZAn0Q1e4bboQWf-1S75eQUA3w-puyrWJDSGp3J67QAczlGE0qAt4jqH_2XNSrSIyEhnJlT7Et0DI6yqz3RFddaHb_1-tHPfrDmwXwQfQk9u0ZhcyK0JqULKA_lmMGOohiel07EAYTbdPQal3nZ2VhOOGl6BZ9_zDxFNgI1k5IoimlbtBaBcQeS9lxBqYHyWwFfU3TAMefPFTuPzJrdC4bM-eTwbvcC11rgaw"/>
 <div class="absolute inset-0 bg-gradient-to-l from-background via-background/60 to-transparent"></div>
 </div>
-<div class="relative z-10 px-5 md:px-margin-desktop max-w-2xl text-left md:text-right pb-6 md:pb-0">
+<div class="relative z-10 tier-content px-5 md:px-margin-desktop max-w-2xl text-left md:text-right pb-6 md:pb-0">
 <div class="mb-gutter">
 <span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.3em]">Tier 02</span>
-<h2 class="font-display-lg text-4xl md:text-display-lg uppercase mt-2 text-glow">Premium Full Detail</h2>
-<p class="text-on-surface-variant text-lg mt-4 font-body-md">Deep interior restoration and basic exterior protection for the ultimate comfort.</p>
+<h2 class="font-display-lg tier-title text-4xl md:text-display-lg uppercase mt-2 text-glow">Premium Full Detail</h2>
+<p class="text-on-surface-variant tier-copy text-lg mt-4 font-body-md">Deep interior restoration and basic exterior protection for the ultimate comfort.</p>
 </div>
-<div class="glass-panel p-gutter mb-gutter text-left">
+<div class="glass-panel tier-panel p-gutter mb-gutter text-left">
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter mb-6 border-b border-outline-variant/30 pb-4">
 <div>
 <p class="font-label-sm text-label-sm text-primary/60 uppercase">Sedan / Coupe</p>
@@ -328,24 +370,24 @@
 </ul>
 <p class="mt-6 font-label-sm text-[10px] text-on-surface-variant uppercase italic">* Price depends on condition of interior.</p>
 </div>
-<a class="bg-primary text-on-primary font-headline-lg text-sm px-10 py-4 uppercase tracking-widest hover:bg-white transition-all duration-300 scale-95 active:scale-90 inline-block w-full sm:w-auto text-center" href="contact.html">
+<a class="bg-primary tier-cta text-on-primary font-headline-lg text-sm px-10 py-4 uppercase tracking-widest hover:bg-white transition-all duration-300 scale-95 active:scale-90 inline-block w-full sm:w-auto text-center" href="contact.html">
                     Upgrade Now
                 </a>
 </div>
 </section>
 <!-- Section 3: Paint Correction -->
-<section class="snap-section flex items-start md:items-center justify-start overflow-hidden bg-surface-container-high pt-20 md:pt-0">
+<section class="snap-section tier-section flex items-start md:items-center justify-start overflow-y-auto overflow-x-hidden bg-surface-container-high pt-10 md:pt-0">
 <div class="absolute inset-0 z-0">
 <img class="w-full h-full object-cover opacity-40" data-alt="A professional detailer using a dual-action orbital polisher on the hood of a midnight blue sports car. The machine's movement creates a soft blur, while the corrected paint section shows a mirror-like reflection of professional studio lighting. The scene is high-contrast, with dark shadows and bright, sharp highlights, conveying technical precision and expert craftsmanship in a high-end detailing studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrWduISZpNAQ_hFJOpeu_DJ1nYggAK6DySQAu9pnuiFPCg9yVgDuEuUWaKqt_eyVRT7IIt-Sc-rdFCRCxY1Mrs3oQMAxTIwWLQWkOQ4CDj8uSLTtbNdtrNfCrfVIouKAG5BVkF97vaJCAYgrjA4Fir4XvKUceBa-NsTgBxXux2CwCapRrLr7GenxqYASUlXJE-mthMY3FxP5ZIPSe_K-qar7Cal8aAwG-ovQini4C2rkCb8IfCtFSLdA"/>
 <div class="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent"></div>
 </div>
-<div class="relative z-10 px-5 md:px-margin-desktop max-w-2xl pb-6 md:pb-0">
+<div class="relative z-10 tier-content px-5 md:px-margin-desktop max-w-2xl pb-6 md:pb-0">
 <div class="mb-gutter">
 <span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.3em]">Tier 03</span>
-<h2 class="font-display-lg text-4xl md:text-display-lg uppercase mt-2 text-glow">Paint Correction</h2>
-<p class="text-on-surface-variant text-lg mt-4 font-body-md">Exterior detail plus clay bar &amp; machine polish to remove swirl marks and restore depth.</p>
+<h2 class="font-display-lg tier-title text-4xl md:text-display-lg uppercase mt-2 text-glow">Paint Correction</h2>
+<p class="text-on-surface-variant tier-copy text-lg mt-4 font-body-md">Exterior detail plus clay bar &amp; machine polish to remove swirl marks and restore depth.</p>
 </div>
-<div class="glass-panel p-gutter mb-gutter">
+<div class="glass-panel tier-panel p-gutter mb-gutter">
 <div class="mb-6 border-b border-outline-variant/30 pb-4">
 <p class="font-label-sm text-label-sm text-primary/60 uppercase">Pricing Structure</p>
 <p class="font-headline-lg text-headline-lg">$80 Exterior + $100/hr Polishing</p>
@@ -365,7 +407,7 @@
 </li>
 </ul>
 </div>
-<a class="bg-primary text-on-primary font-headline-lg text-sm px-10 py-4 uppercase tracking-widest hover:bg-white transition-all duration-300 scale-95 active:scale-90 inline-block w-full sm:w-auto text-center" href="contact.html">
+<a class="bg-primary tier-cta text-on-primary font-headline-lg text-sm px-10 py-4 uppercase tracking-widest hover:bg-white transition-all duration-300 scale-95 active:scale-90 inline-block w-full sm:w-auto text-center" href="contact.html">
                     Consult Detailing Specialist
                 </a>
 </div>
