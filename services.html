@@ -141,6 +141,26 @@
             box-shadow: 0 0 18px rgba(0, 153, 255, 0.35);
         }
 
+        html.force-mobile .desktop-nav {
+            display: none !important;
+        }
+
+        html.force-mobile .mobile-menu-toggle {
+            display: inline-flex !important;
+        }
+
+        html.force-mobile .mobile-menu-panel {
+            display: none !important;
+        }
+
+        html.force-mobile .mobile-menu-panel.is-open {
+            display: block !important;
+        }
+
+        html.force-mobile .mobile-sticky-cta {
+            display: block !important;
+        }
+
         @media (min-width: 768px) {
             .snap-container {
                 height: calc(100vh - 73px);
@@ -153,17 +173,17 @@
 <nav class="sticky top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-xl">
 <div class="flex justify-between items-center px-5 md:px-margin-desktop py-4 max-w-container-max mx-auto">
 <div class="font-display-lg text-headline-lg tracking-tighter uppercase text-primary dark:text-primary">VALENCE DETAILS</div>
-<div class="hidden md:flex gap-gutter items-center">
+<div class="hidden md:flex gap-gutter items-center desktop-nav">
 <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="index.html">Home</a>
 <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="gallery.html">Gallery</a>
 <a class="font-label-sm text-label-sm text-primary font-bold border-b-2 border-primary pb-1" href="services.html">Services</a>
 <a class="font-label-sm text-label-sm bg-primary text-on-primary-container px-6 py-2 uppercase tracking-widest scale-95 active:scale-90 transition-transform hover:bg-primary/90" href="contact.html">Book Now</a>
 </div>
 <div class="md:hidden">
-<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation" class="text-primary cursor-pointer p-2 border border-primary/40 rounded-lg menu-glow" id="mobile-menu-button" type="button"><span class="material-symbols-outlined">menu</span></button>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation" class="mobile-menu-toggle text-primary cursor-pointer p-2 border border-primary/40 rounded-lg menu-glow" id="mobile-menu-button" type="button"><span class="material-symbols-outlined">menu</span></button>
 </div>
 </div>
-<div class="mobile-menu hidden md:hidden px-5 py-4" id="mobile-menu">
+<div class="mobile-menu mobile-menu-panel hidden md:hidden px-5 py-4" id="mobile-menu">
 <div class="flex flex-col gap-4">
 <a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="index.html">Home</a>
 <a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="gallery.html">Gallery</a>
@@ -407,9 +427,16 @@
 </footer>
 </section>
 </main>
-<a class="fixed bottom-4 left-5 right-5 md:hidden bg-primary text-on-primary-container font-label-sm text-label-sm font-bold uppercase tracking-[0.15em] py-4 text-center z-50 shadow-[0_0_22px_rgba(0,153,255,0.45)]" href="contact.html">Book Now</a>
+<a class="mobile-sticky-cta fixed bottom-4 left-5 right-5 md:hidden bg-primary text-on-primary-container font-label-sm text-label-sm font-bold uppercase tracking-[0.15em] py-4 text-center z-50 shadow-[0_0_22px_rgba(0,153,255,0.45)]" href="contact.html">Book Now</a>
 <!-- Interactive Scripts -->
 <script>
+        const isMaskedMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) ||
+            (navigator.maxTouchPoints > 0 && Math.min(screen.width, screen.height) <= 900);
+
+        if (isMaskedMobile) {
+            document.documentElement.classList.add('force-mobile');
+        }
+
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -418,6 +445,7 @@
                 const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
                 mobileMenuButton.setAttribute('aria-expanded', String(!isExpanded));
                 mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('is-open');
             });
         }
 
