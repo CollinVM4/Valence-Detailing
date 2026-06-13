@@ -447,6 +447,8 @@
         const emailBookingButton = document.getElementById('email-booking-button');
         const textBookingButton = document.getElementById('text-booking-button');
         const bookingEmailAddress = 'devon@valencedetails.com';
+        const isMobileDevice = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) ||
+            (navigator.maxTouchPoints > 0 && Math.min(screen.width, screen.height) <= 900);
 
         async function copyEmailAddress() {
             if (!contactEmailAddress) {
@@ -527,11 +529,19 @@
                     return;
                 }
 
+                const mailtoLink = `mailto:${encodeURIComponent(bookingEmailAddress)}?subject=${encodeURIComponent(draft.subject)}&body=${encodeURIComponent(draft.message)}`;
+
+                // On phones, native mail compose is more reliable than Gmail web drafts.
+                if (isMobileDevice) {
+                    window.location.href = mailtoLink;
+                    return;
+                }
+
                 const gmailComposeLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(bookingEmailAddress)}&su=${encodeURIComponent(draft.subject)}&body=${encodeURIComponent(draft.message)}`;
                 const composeWindow = window.open(gmailComposeLink, '_blank', 'noopener,noreferrer');
 
                 if (!composeWindow) {
-                    window.location.href = gmailComposeLink;
+                    window.location.href = mailtoLink;
                 }
             });
         }
