@@ -192,11 +192,22 @@
         }
 
         @media (max-width: 767px) {
+            .snap-container {
+                scroll-snap-type: y proximity;
+            }
+
+            .snap-section {
+                height: auto;
+                min-height: calc(100svh - var(--nav-offset));
+            }
+
             .tier-section {
                 padding-top: 1.75rem;
             }
 
             .tier-content {
+                display: flex;
+                flex-direction: column;
                 padding-bottom: 1rem;
             }
 
@@ -212,11 +223,12 @@
             }
 
             .tier-panel {
+                order: 2;
                 padding: 1rem;
                 margin-bottom: 0.9rem;
             }
 
-            .tier-panel .space-y-3 > li {
+            .tier-panel ul > li {
                 gap: 0.5rem;
             }
 
@@ -226,10 +238,13 @@
             }
 
             .tier-cta {
+                order: 3;
                 padding: 0.75rem 1rem;
                 font-size: 0.8rem;
                 letter-spacing: 0.09em;
                 min-height: 48px;
+                margin-top: 0.1rem;
+                margin-bottom: 0.75rem;
             }
         }
     </style>
@@ -268,9 +283,8 @@
 </div>
 <div class="relative z-10 tier-content px-5 md:px-margin-desktop max-w-2xl pb-6 md:pb-0">
 <div class="mb-gutter">
-<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.3em]">Tier 01</span>
 <h2 class="font-display-lg tier-title text-4xl md:text-display-lg uppercase mt-2 text-glow">Express Detail</h2>
-<p class="text-on-surface-variant tier-copy text-lg mt-4 font-body-md">Basic interior &amp; exterior detail for the daily driver that demands a showroom shine.</p>
+<p class="text-on-surface-variant tier-copy text-lg mt-4 font-body-md">Basic interior &amp; exterior detail. Estimated time: 2-3 hours.</p>
 </div>
 <div class="glass-panel tier-panel p-gutter mb-gutter">
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter mb-6 border-b border-outline-variant/30 pb-4">
@@ -283,10 +297,10 @@
 <p class="font-headline-lg text-headline-lg">$150 - $160</p>
 </div>
 </div>
-<ul class="space-y-3">
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
 <li class="flex items-start gap-3">
 <span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="font-body-md text-on-surface">Snow foam pre-soak to loosen dirt &amp; road grime</span>
+<span class="font-body-md text-on-surface">Snow foam pre-soak to loosen dirt, road grime &amp; bugs</span>
 </li>
 <li class="flex items-start gap-3">
 <span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
@@ -299,6 +313,14 @@
 <li class="flex items-start gap-3">
 <span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
 <span class="font-body-md text-on-surface">Interior air blow out, vacuum &amp; detail</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-on-surface">Windows &amp; mirrors streak free finish</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-on-surface">Door jambs</span>
 </li>
 </ul>
 </div>
@@ -315,9 +337,8 @@
 </div>
 <div class="relative z-10 tier-content px-5 md:px-margin-desktop max-w-2xl text-left md:text-right pb-6 md:pb-0">
 <div class="mb-gutter">
-<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.3em]">Tier 02</span>
 <h2 class="font-display-lg tier-title text-4xl md:text-display-lg uppercase mt-2 text-glow">Premium Full Detail</h2>
-<p class="text-on-surface-variant tier-copy text-lg mt-4 font-body-md">Deep interior restoration and basic exterior protection for the ultimate comfort.</p>
+<p class="text-on-surface-variant tier-copy text-lg mt-4 font-body-md">Deep interior restoration and exterior protection for the ultimate comfort. Estimated time: 3-4 hours.</p>
 </div>
 <div class="glass-panel tier-panel p-gutter mb-gutter text-left">
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter mb-6 border-b border-outline-variant/30 pb-4">
@@ -330,28 +351,40 @@
 <p class="font-headline-lg text-headline-lg">$190 - $210</p>
 </div>
 </div>
-<ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
 <li class="flex items-start gap-3">
 <span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">stars</span>
 <span class="font-body-md text-on-surface">3 month ceramic spray wax</span>
 </li>
 <li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">stars</span>
-<span class="font-body-md text-on-surface">Deep vacuum &amp; shampoo</span>
+<span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-on-surface">Snow foam pre-soak to loosen dirt, road grime &amp; bugs</span>
 </li>
 <li class="flex items-start gap-3">
 <span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">stars</span>
-<span class="font-body-md text-on-surface">Leather cleaned &amp; protected</span>
+<span class="font-body-md text-on-surface">Deep vacuum &amp; shampoo, Interior air blow out</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-body-md text-on-surface">Leather/plastics cleaned &amp; protected</span>
 </li>
 <li class="flex items-start gap-3">
 <span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">stars</span>
 <span class="font-body-md text-on-surface">Bug &amp; tar removal</span>
 </li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-body-md text-on-surface">Door jambs</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-body-md text-on-surface">Spot-free water rinse &amp; Hand dry</span>
+</li>
 </ul>
 <p class="mt-6 font-label-sm text-[10px] text-on-surface-variant uppercase italic">* Price depends on condition of interior.</p>
 </div>
 <a class="bg-primary tier-cta text-on-primary font-headline-lg text-sm px-10 py-4 uppercase tracking-widest hover:bg-white transition-all duration-300 scale-95 active:scale-90 inline-block w-full sm:w-auto text-center" href="contact.html">
-                    Upgrade Now
+                    Secure Package
                 </a>
 </div>
 </section>
@@ -363,7 +396,6 @@
 </div>
 <div class="relative z-10 tier-content px-5 md:px-margin-desktop max-w-2xl pb-6 md:pb-0">
 <div class="mb-gutter">
-<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.3em]">Tier 03</span>
 <h2 class="font-display-lg tier-title text-4xl md:text-display-lg uppercase mt-2 text-glow">Paint Correction</h2>
 <p class="text-on-surface-variant tier-copy text-lg mt-4 font-body-md">Exterior detail plus clay bar &amp; machine polish to remove swirl marks and restore depth.</p>
 </div>
@@ -372,20 +404,24 @@
 <p class="font-label-sm text-label-sm text-primary/60 uppercase">Pricing Structure</p>
 <p class="font-headline-lg text-headline-lg">$80 Exterior + $100/hr Polishing</p>
 </div>
-<ul class="space-y-2 columns-1 md:columns-2 gap-gutter">
-<li class="flex items-center gap-3 py-1">
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-body-md text-on-surface">Exterior detail with snow foam and 2 bucket contact wash</span>
+</li>
+<li class="flex items-start gap-3">
 <span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">stars</span>
 <span class="font-body-md text-on-surface">Iron removal &amp; Clay bar</span>
 </li>
-<li class="flex items-center gap-3 py-1">
+<li class="flex items-start gap-3">
 <span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">stars</span>
-<span class="font-body-md text-on-surface">Machine polish</span>
+<span class="font-body-md text-on-surface">Machine polish to remove light scratches and swirl marks</span>
 </li>
-<li class="flex items-center gap-3 py-1">
+<li class="flex items-start gap-3">
 <span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">stars</span>
-<span class="font-body-md text-on-surface">Alcohol wipe down</span>
+<span class="font-body-md text-on-surface">Alcohol wipe down to remove polish residue</span>
 </li>
-<li class="flex items-center gap-3 py-1">
+<li class="flex items-start gap-3">
 <span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">stars</span>
 <span class="font-body-md text-on-surface">Wax sealant finish</span>
 </li>
@@ -400,7 +436,7 @@
 <section class="snap-section addons-section flex flex-col justify-between bg-surface-container-lowest">
 <div class="px-5 md:px-margin-desktop py-gutter pb-6 md:pb-gutter">
 <div class="max-w-container-max mx-auto w-full">
-<h2 class="font-display-lg text-headline-lg uppercase mb-gutter text-primary tracking-widest">Performance Add-Ons</h2>
+<h2 class="font-display-lg text-headline-lg uppercase mb-gutter text-primary tracking-widest">Optional Add-Ons</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter"><!-- Engine Bay -->
 <div class="glass-panel p-6 flex flex-col justify-between hover:translate-y-[-4px] transition-transform">
 <div>

@@ -109,6 +109,69 @@
         .image-zoom:hover img {
             transform: scale(1.05);
         }
+        .lightbox-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 12, 18, 0.92);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+
+        .lightbox-overlay.is-open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox-image {
+            max-width: min(96vw, 1400px);
+            max-height: 90vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border: 1px solid rgba(159, 202, 255, 0.28);
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6);
+            transform: scale(0.96);
+            transition: transform 0.25s ease;
+        }
+
+        .lightbox-overlay.is-open .lightbox-image {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            border: 1px solid rgba(159, 202, 255, 0.35);
+            color: #e3e2e7;
+            background: rgba(18, 19, 23, 0.72);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            width: 46px;
+            height: 46px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .lightbox-close:hover {
+            border-color: #9fcaff;
+            color: #9fcaff;
+        }
+
+        body.no-scroll {
+            overflow: hidden;
+        }
         .nav-underline {
             position: relative;
         }
@@ -265,8 +328,6 @@
 <img alt="Feature vehicle" class="w-full h-full object-cover transition-transform duration-700 ease-out" data-alt="A high-performance luxury sports car with a deep obsidian metallic finish, showcased in a professional automotive studio under dramatic neon blue lighting. The paint surface exhibits an incredible mirror-like reflection, highlighting the meticulous ceramic coating application. Subtle light leaks dance across the curves of the aerodynamic body, emphasizing the high-contrast dark mode aesthetic of the brand." src="media\IMG_0572.png"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
 <div class="absolute bottom-0 left-0 p-gutter transform translate-y-0 md:translate-y-4 group-hover:translate-y-0 transition-transform">
-<span class="font-label-sm text-label-sm text-primary mb-2 block tracking-widest">PREMIUM FULL DETAIL</span>
-<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">Stealth Series GT</h3>
 </div>
 </div>
 <!-- Exterior Item 2 -->
@@ -274,8 +335,6 @@
 <img class="w-full h-full object-cover transition-transform duration-700" data-alt="Close-up detail of a modern vehicle's headlight and front grille, featuring sharp architectural lines and pristine carbon fiber textures. The image is captured in a moody, low-light environment with a single primary blue light source casting electric highlights on the polished surfaces. The focus is razor-sharp on the glass optics, demonstrating the clarity and precision of the valence details finishing process." src="media\IMG_0483.png"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-70 md:opacity-0 group-hover:opacity-100 transition-opacity"></div>
 <div class="absolute bottom-0 left-0 p-gutter opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
-<span class="font-label-sm text-label-sm text-primary mb-1 block">SEDAN</span>
-<h4 class="font-label-sm text-label-sm font-bold uppercase">Express Detail</h4>
 </div>
 </div>
 <!-- Exterior Item 3 -->
@@ -292,16 +351,12 @@
 <img class="w-full h-full md:h-[400px] object-cover transition-transform duration-700" data-alt="Macro photography of a luxury car interior featuring perforated black leather seats with contrasting primary blue stitching. The lighting is soft and diffused, highlighting the deep cleaning and conditioning of the materials. The atmosphere is pristine and high-end, showcasing the architectural beauty of the cockpit's design through a brutalist lens." src="media\IMG_0563.png"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-70 md:opacity-0 group-hover:opacity-100 transition-opacity"></div>
 <div class="absolute bottom-0 left-0 p-gutter opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
-<span class="font-label-sm text-label-sm text-primary mb-1 block">LEATHER REJUVENATION</span>
-<h4 class="font-label-sm text-label-sm font-bold uppercase">DASHBOARD / STEERING WHEEL</h4>
 </div>
 </div>
 <div class="interior-item hidden md:col-span-6 group relative overflow-hidden glass-card rounded-lg cursor-pointer image-zoom h-[62vh] md:h-auto">
 <img class="w-full h-full md:h-[400px] object-cover transition-transform duration-700" data-alt="A clean, minimalist view of a vehicle's dashboard and digital display system, rendered in a high-contrast dark palette. The surfaces are dust-free and treated with a low-sheen finish, reflecting a high level of interior detailing craftsmanship. Cold blue ambient lighting from the console illuminates the cabin with a futuristic, electric precision." src="media\IMG_0561.png"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-70 md:opacity-0 group-hover:opacity-100 transition-opacity"></div>
 <div class="absolute bottom-0 left-0 p-gutter opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
-<span class="font-label-sm text-label-sm text-primary mb-1 block">SEAT SHAMPOO</span>
-<h4 class="font-label-sm text-label-sm font-bold uppercase">DIRT EXTRACTION</h4>
 </div>
 </div>
 </div>
@@ -335,6 +390,12 @@
 </div>
 </div>
 </footer>
+<div aria-hidden="true" class="lightbox-overlay" id="image-lightbox" role="dialog" tabindex="-1">
+<button aria-label="Close image preview" class="lightbox-close" id="lightbox-close" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+<img alt="Expanded gallery preview" class="lightbox-image" id="lightbox-image" src=""/>
+</div>
 <script>
         function openInstagramLink(event) {
             event.preventDefault();
@@ -371,6 +432,64 @@
                 mobileMenu.classList.toggle('is-open');
             });
         }
+
+        const lightbox = document.getElementById('image-lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxClose = document.getElementById('lightbox-close');
+
+        function openLightboxFromCard(card) {
+            if (!lightbox || !lightboxImage) {
+                return;
+            }
+
+            const img = card.querySelector('img');
+            if (!img) {
+                return;
+            }
+
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.getAttribute('data-alt') || img.alt || 'Expanded gallery preview';
+            lightbox.classList.add('is-open');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('no-scroll');
+        }
+
+        function closeLightbox() {
+            if (!lightbox || !lightboxImage) {
+                return;
+            }
+
+            lightbox.classList.remove('is-open');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('no-scroll');
+            window.setTimeout(() => {
+                if (!lightbox.classList.contains('is-open')) {
+                    lightboxImage.src = '';
+                }
+            }, 220);
+        }
+
+        document.querySelectorAll('.image-zoom').forEach(card => {
+            card.addEventListener('click', () => openLightboxFromCard(card));
+        });
+
+        if (lightboxClose) {
+            lightboxClose.addEventListener('click', closeLightbox);
+        }
+
+        if (lightbox) {
+            lightbox.addEventListener('click', (event) => {
+                if (event.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && lightbox && lightbox.classList.contains('is-open')) {
+                closeLightbox();
+            }
+        });
 
         function switchTab(type) {
             const tabs = document.querySelectorAll('.tab-btn');
