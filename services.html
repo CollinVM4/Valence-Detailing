@@ -193,22 +193,36 @@
 
         @media (max-width: 767px) {
             .snap-container {
-                scroll-snap-type: y proximity;
+                scroll-snap-type: y mandatory;
             }
 
             .snap-section {
-                height: auto;
+                height: calc(100svh - var(--nav-offset));
                 min-height: calc(100svh - var(--nav-offset));
             }
 
+            .addons-section {
+                height: auto;
+                min-height: calc(100svh - var(--nav-offset));
+                scroll-snap-stop: normal;
+            }
+
             .tier-section {
-                padding-top: 1.75rem;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
             }
 
             .tier-content {
                 display: flex;
                 flex-direction: column;
-                padding-bottom: 1rem;
+                justify-content: center;
+                gap: 0.65rem;
+                padding-top: 0.25rem;
+                padding-bottom: 0.5rem;
+            }
+
+            .tier-content .mb-gutter {
+                margin-bottom: 0.55rem;
             }
 
             .tier-title {
@@ -219,13 +233,13 @@
             .tier-copy {
                 font-size: 0.95rem;
                 line-height: 1.35;
-                margin-top: 0.6rem;
+                margin-top: 0.45rem;
             }
 
             .tier-panel {
                 order: 2;
                 padding: 1rem;
-                margin-bottom: 0.9rem;
+                margin-bottom: 0.6rem;
             }
 
             .tier-panel ul > li {
@@ -243,8 +257,8 @@
                 font-size: 0.8rem;
                 letter-spacing: 0.09em;
                 min-height: 48px;
-                margin-top: 0.1rem;
-                margin-bottom: 0.75rem;
+                margin-top: 0;
+                margin-bottom: 0.5rem;
             }
         }
     </style>
