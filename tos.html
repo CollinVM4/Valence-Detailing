@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Terms of Service | VALENCE DETAILS</title>
+<link href="media/IMG_0206.PNG" rel="icon" type="image/png"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#0099ff",
+                        "on-secondary-fixed-variant": "#474746",
+                        "surface-dim": "#121317",
+                        "primary": "#9fcaff",
+                        "surface-container-highest": "#343539",
+                        "surface-bright": "#38393d",
+                        "surface-container": "#1e1f23",
+                        "tertiary-fixed-dim": "#c9c6c5",
+                        "outline-variant": "#3f4753",
+                        "surface": "#121317",
+                        "tertiary": "#c9c6c5",
+                        "background": "#121317",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e3e2e7",
+                        "on-primary-fixed-variant": "#00497e",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#e5e2e1",
+                        "outline": "#89919e",
+                        "inverse-surface": "#e3e2e7",
+                        "surface-container-low": "#1a1b1f",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "tertiary-container": "#969494",
+                        "secondary-container": "#474746",
+                        "surface-variant": "#343539",
+                        "surface-container-lowest": "#0d0e12",
+                        "on-secondary-container": "#b7b5b4",
+                        "primary-fixed-dim": "#9fcaff",
+                        "surface-container-high": "#292a2e",
+                        "inverse-on-surface": "#2f3034",
+                        "on-surface": "#e3e2e7",
+                        "on-secondary": "#313030",
+                        "secondary": "#c8c6c5",
+                        "on-primary-container": "#002f54",
+                        "on-tertiary": "#313030",
+                        "on-surface-variant": "#bfc7d5",
+                        "surface-tint": "#9fcaff",
+                        "primary-fixed": "#d2e4ff",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-primary": "#003259",
+                        "on-primary-fixed": "#001d36",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "inverse-primary": "#0061a5",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-tertiary-container": "#2e2d2d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Montserrat"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "label-sm": ["JetBrains Mono"],
+                        "display-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0A;
+            color: #e3e2e7;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(159, 202, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 153, 255, 0.45);
+            box-shadow: 0 0 20px rgba(0, 153, 255, 0.12);
+        }
+
+        .kinetic-bg {
+            background-image: radial-gradient(circle at 50% 20%, rgba(0, 153, 255, 0.1) 0%, transparent 60%);
+        }
+
+        .mobile-menu {
+            background: rgba(13, 14, 18, 0.96);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(159, 202, 255, 0.2);
+        }
+
+        .menu-glow {
+            box-shadow: 0 0 18px rgba(0, 153, 255, 0.35);
+        }
+
+        .mobile-menu-link {
+            font-size: 18px;
+            line-height: 1.25;
+            letter-spacing: 0.06em;
+            min-height: 56px;
+            display: flex;
+            align-items: center;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        @media (max-width: 767px) {
+            .site-brand {
+                font-size: clamp(1.25rem, 5vw, 1.7rem);
+                line-height: 1;
+            }
+
+            .site-nav-shell {
+                min-height: 78px;
+            }
+        }
+
+        html.force-mobile .desktop-nav {
+            display: none !important;
+        }
+
+        html.force-mobile .mobile-menu-toggle {
+            display: inline-flex !important;
+        }
+
+        html.force-mobile .mobile-menu-panel {
+            display: none !important;
+        }
+
+        html.force-mobile .mobile-menu-panel.is-open {
+            display: block !important;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md">
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl dark:bg-surface/80 border-b border-outline-variant/30">
+<div class="site-nav-shell flex justify-between items-center px-5 md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="site-brand font-display-lg text-headline-lg font-black tracking-tighter text-primary dark:text-primary">VALENCE DETAILS</div>
+<div class="hidden md:flex items-center space-x-8 desktop-nav">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="gallery.html">Gallery</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="services.html">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="contact.html">Contact</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-sm text-label-sm" href="tos.html">Terms</a>
+</div>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation" class="mobile-menu-toggle md:hidden text-primary p-3 border border-primary/40 rounded-lg menu-glow" id="mobile-menu-button" type="button">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="mobile-menu mobile-menu-panel hidden md:hidden px-5 py-6" id="mobile-menu">
+<div class="flex flex-col gap-5">
+<a class="mobile-menu-link text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="index.html">Home</a>
+<a class="mobile-menu-link text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="gallery.html">Gallery</a>
+<a class="mobile-menu-link text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="services.html">Services</a>
+<a class="mobile-menu-link text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="contact.html">Contact</a>
+<a class="mobile-menu-link text-primary font-bold font-label-sm text-label-sm uppercase" href="tos.html">Terms of Service</a>
+</div>
+</div>
+</nav>
+
+<main class="pt-32 kinetic-bg min-h-screen pb-28 md:pb-0">
+<section class="max-w-container-max mx-auto px-5 md:px-margin-desktop mb-10 md:mb-14">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="space-y-2">
+<h1 class="font-display-lg text-headline-lg md:text-display-lg font-black uppercase leading-none">TERMS OF SERVICE</h1>
+<p class="text-on-surface-variant max-w-2xl">Placeholder legal content for now. This page can be replaced with final counsel-approved terms at any time.</p>
+</div>
+<div class="h-[2px] flex-grow bg-gradient-to-r from-primary/50 to-transparent hidden md:block mb-4 mx-12"></div>
+</div>
+</section>
+
+<section class="max-w-container-max mx-auto px-5 md:px-margin-desktop pb-24">
+<div class="glass-card rounded-xl p-8 md:p-12 space-y-10">
+<div class="space-y-3">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">1. Service Agreement</h2>
+<p class="text-on-surface-variant">The Company agrees to provide mobile detailing services as requested by the Customer. Services will be performed at the location designated by the Customer and subject to these Terms and Conditions.</p>
+<p class="text-on-surface-variant">The Company reserves the right to refuse service for any reason, including unsafe working conditions, hazardous materials, excessive contamination, or inappropriate customer conduct.</p>
+</div>
+<div class="space-y-3">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">2. Payment Terms</h2>
+<p class="text-on-surface-variant">Payment is due immediately upon completion of services unless otherwise agreed in writing.</p>
+<p class="text-on-surface-variant">Accepted payment methods include:</p>
+<ul class="list-disc pl-6 text-on-surface-variant space-y-1">
+<li>Cash</li>
+<li>Credit/Debit Card</li>
+<li>Electronic Payment Services</li>
+</ul>
+<p class="text-on-surface-variant">Failure to pay may result in additional collection costs, legal fees, and interest as permitted by Florida law.</p>
+</div>
+<div class="space-y-3">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">3. Appointments and Cancellations</h2>
+<p class="text-on-surface-variant">Customers must provide at least 24 hours' notice for cancellations or rescheduling.</p>
+<p class="text-on-surface-variant">The Company reserves the right to charge:</p>
+<ul class="list-disc pl-6 text-on-surface-variant space-y-1">
+<li>A cancellation fee of up to 50% of the scheduled service price for late cancellations.</li>
+<li>A no-show fee of up to 100% of the scheduled service price if the Customer is unavailable at the appointment time.</li>
+</ul>
+<p class="text-on-surface-variant">Weather-related cancellations may be rescheduled without penalty at the Company's discretion.</p>
+</div>
+<div class="space-y-3">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">4. Access to Vehicle</h2>
+<p class="text-on-surface-variant">The Customer agrees to:</p>
+<ul class="list-disc pl-6 text-on-surface-variant space-y-1">
+<li>Provide safe and legal access to the vehicle.</li>
+<li>Remove personal valuables prior to service.</li>
+<li>Ensure the vehicle can be unlocked and moved if necessary.</li>
+</ul>
+<p class="text-on-surface-variant">The Company is not responsible for delays caused by inaccessible vehicles or locations.</p>
+</div>
+<div class="space-y-3">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">5. Personal Property Disclaimer</h2>
+<p class="text-on-surface-variant">The Company is not responsible for:</p>
+<ul class="list-disc pl-6 text-on-surface-variant space-y-1">
+<li>Lost, stolen, or damaged personal belongings left inside the vehicle.</li>
+<li>Cash, jewelry, electronics, firearms, documents, or other valuables left in the vehicle.</li>
+</ul>
+<p class="text-on-surface-variant">Customers are strongly encouraged to remove all valuables before service.</p>
+</div>
+<div class="space-y-3">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">6. Pre-Existing Damage</h2>
+<p class="text-on-surface-variant">The Customer acknowledges that the vehicle may have pre-existing:</p>
+<ul class="list-disc pl-6 text-on-surface-variant space-y-1">
+<li>Scratches</li>
+<li>Swirl marks</li>
+<li>Paint defects</li>
+<li>Dents</li>
+<li>Cracked trim</li>
+<li>Loose panels</li>
+<li>Faded paint</li>
+<li>Worn upholstery</li>
+</ul>
+<p class="text-on-surface-variant">The Company is not responsible for damage resulting from pre-existing defects or normal wear and tear.</p>
+<p class="text-on-surface-variant">The Company may photograph the vehicle before, during, and after service for documentation purposes.</p>
+</div>
+<div class="space-y-3">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">7. Limitation of Liability</h2>
+<p class="text-on-surface-variant">To the maximum extent permitted by law, the Company's liability for any claim arising out of services provided shall not exceed the amount paid by the Customer for the specific service giving rise to the claim.</p>
+<p class="text-on-surface-variant">Under no circumstances shall the Company be liable for:</p>
+<ul class="list-disc pl-6 text-on-surface-variant space-y-1">
+<li>Loss of vehicle value</li>
+<li>Loss of use</li>
+<li>Rental car expenses</li>
+<li>Lost profits</li>
+<li>Indirect damages</li>
+<li>Consequential damages</li>
+<li>Incidental damages</li>
+</ul>
+</div>
+<div class="space-y-3">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">8. Biohazard and Unsafe Conditions</h2>
+<p class="text-on-surface-variant">The Company reserves the right to refuse or stop service if a vehicle contains:</p>
+<ul class="list-disc pl-6 text-on-surface-variant space-y-1">
+<li>Human or animal waste</li>
+<li>Blood or bodily fluids</li>
+<li>Drug paraphernalia</li>
+<li>Mold</li>
+<li>Insects</li>
+<li>Rodent infestations</li>
+<li>Hazardous chemicals</li>
+</ul>
+<p class="text-on-surface-variant">Additional charges may apply for remediation services.</p>
+</div>
+<div class="space-y-3">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">9. Weather Conditions</h2>
+<p class="text-on-surface-variant">Mobile detailing services are subject to weather conditions.</p>
+<p class="text-on-surface-variant">The Company may:</p>
+<ul class="list-disc pl-6 text-on-surface-variant space-y-1">
+<li>Reschedule appointments due to rain, lightning, high winds, or unsafe conditions.</li>
+<li>Modify services as necessary due to environmental conditions.</li>
+</ul>
+<p class="text-on-surface-variant">The Company shall not be liable for delays caused by weather.</p>
+</div>
+<div class="space-y-3">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">10. Satisfaction Policy</h2>
+<p class="text-on-surface-variant">The Customer must inspect the vehicle upon completion.</p>
+<p class="text-on-surface-variant">Any concerns regarding service quality must be reported before the Company leaves the service location.</p>
+<p class="text-on-surface-variant">The Company will be given a reasonable opportunity to correct any legitimate issues before refunds or credits are considered.</p>
+</div>
+<div class="space-y-3">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">11. Paint Correction and Ceramic Coating Disclaimer</h2>
+<p class="text-on-surface-variant">Paint correction, polishing, wet sanding, and ceramic coating services involve permanent modification of the vehicle's finish.</p>
+<p class="text-on-surface-variant">The Customer acknowledges:</p>
+<ul class="list-disc pl-6 text-on-surface-variant space-y-1">
+<li>Results may vary.</li>
+<li>Not all defects can be removed safely.</li>
+<li>Some scratches may remain visible.</li>
+<li>Ceramic coatings require proper maintenance.</li>
+</ul>
+<p class="text-on-surface-variant">The Company does not guarantee a specific level of defect removal unless stated in writing.</p>
+</div>
+<div class="space-y-3">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">12. Water and Electricity</h2>
+<p class="text-on-surface-variant">If Customer-provided water or electricity is required, the Customer authorizes the Company to use such utilities during the service.</p>
+<p class="text-on-surface-variant">If utilities are unavailable, additional fees may apply for self-contained equipment usage.</p>
+</div>
+<div class="space-y-3">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">13. Photography and Marketing Consent</h2>
+<p class="text-on-surface-variant">The Customer grants the Company permission to photograph and video record the vehicle before, during, and after services.</p>
+<p class="text-on-surface-variant">These images may be used for:</p>
+<ul class="list-disc pl-6 text-on-surface-variant space-y-1">
+<li>Marketing</li>
+<li>Advertising</li>
+<li>Social media</li>
+<li>Website content</li>
+</ul>
+<p class="text-on-surface-variant">Customers may opt out by submitting a written request before service begins.</p>
+</div>
+<div class="space-y-3">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">14. Warranty Disclaimer</h2>
+<p class="text-on-surface-variant">Except where required by law, all services are provided "AS IS."</p>
+<p class="text-on-surface-variant">The Company makes no warranties, express or implied, including warranties of merchantability or fitness for a particular purpose.</p>
+</div>
+<div class="space-y-3">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">15. Indemnification</h2>
+<p class="text-on-surface-variant">The Customer agrees to defend, indemnify, and hold harmless the Company, its owners, employees, contractors, and agents from claims arising out of:</p>
+<ul class="list-disc pl-6 text-on-surface-variant space-y-1">
+<li>Customer negligence</li>
+<li>Misrepresentation regarding vehicle condition</li>
+<li>Unsafe work environments</li>
+<li>Breach of these Terms and Conditions</li>
+</ul>
+</div>
+<div class="space-y-3">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">16. Governing Law</h2>
+<p class="text-on-surface-variant">These Terms and Conditions shall be governed by the laws of the State of Florida.</p>
+<p class="text-on-surface-variant">Any dispute arising from these Terms shall be resolved exclusively in the state or county courts located within Florida.</p>
+</div>
+<div class="space-y-3">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">17. Severability</h2>
+<p class="text-on-surface-variant">If any provision of these Terms and Conditions is found unenforceable, the remaining provisions shall remain in full force and effect.</p>
+</div>
+<div class="space-y-3">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">18. Entire Agreement</h2>
+<p class="text-on-surface-variant">These Terms and Conditions constitute the entire agreement between the Customer and the Company and supersede any prior verbal or written agreements.</p>
+</div>
+<div class="space-y-3 border border-primary/25 bg-surface-container-low p-6 rounded-lg">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase text-primary">Customer Acknowledgment</h2>
+<p class="text-on-surface-variant">By booking, authorizing, or accepting service, the Customer acknowledges that they have read, understood, and agreed to these Terms and Conditions.</p>
+<a class="inline-flex px-8 py-3 border border-primary-container text-primary-container font-label-sm text-label-sm font-bold tracking-widest hover:bg-primary-container hover:text-on-primary-container transition-all" href="contact.html">CONTACT VALENCE</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-12 w-full max-w-container-max mx-auto gap-6">
+<div class="flex flex-col gap-3">
+<img alt="Valence Details logo" class="w-[170px] md:w-[260px] h-auto object-contain" src="media/IMG_0206.PNG"/>
+<p class="font-label-sm text-label-sm text-on-secondary-fixed-variant tracking-widest">© 2026 VALENCE DETAILS. EXPERT CARE EVERY TIME.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-on-secondary-fixed-variant hover:text-on-surface transition-colors duration-200 font-label-sm text-label-sm" href="index.html">Home</a>
+<a class="text-on-secondary-fixed-variant hover:text-on-surface transition-colors duration-200 font-label-sm text-label-sm" href="contact.html">Contact</a>
+<a class="text-primary transition-colors duration-200 font-label-sm text-label-sm" href="tos.html">Terms of Service</a>
+</div>
+</div>
+</footer>
+
+<script>
+        const isMaskedMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) ||
+            (navigator.maxTouchPoints > 0 && Math.min(screen.width, screen.height) <= 900);
+
+        if (isMaskedMobile) {
+            document.documentElement.classList.add('force-mobile');
+        }
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                mobileMenuButton.setAttribute('aria-expanded', String(!isExpanded));
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('is-open');
+            });
+        }
+    </script>
+</body>
+</html>

@@ -245,6 +245,7 @@
 <a class="mobile-menu-link text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="gallery.html">Gallery</a>
 <a class="mobile-menu-link text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="services.html">Services</a>
 <a class="mobile-menu-link text-primary font-bold font-label-sm text-label-sm uppercase" href="contact.html">Contact</a>
+<a class="mobile-menu-link text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="tos.html">Terms of Service</a>
 <a class="mobile-menu-cta bg-primary text-on-primary-container px-6 py-3 font-label-sm text-label-sm font-bold uppercase text-center" href="#booking-form">Book Now</a>
 </div>
 </div>
@@ -349,6 +350,13 @@
 <label class="font-label-sm text-label-sm text-primary uppercase">Details</label>
 <textarea class="w-full input-ignite input-ignite-light p-4 min-h-[120px] font-body-md text-on-surface rounded-none resize-none" id="details-input" name="details" placeholder="Specific areas of concern or special requests..." rows="4"></textarea>
 </div>
+<div class="space-y-2">
+<label class="inline-flex items-start gap-3 cursor-pointer">
+<input class="mt-1 h-4 w-4 rounded border-outline-variant text-primary-container focus:ring-primary-container" id="tos-agreement" name="tosAgreement" type="checkbox" required>
+<span class="text-on-surface-variant font-body-md">I agree to the <a class="text-primary hover:text-primary-container underline underline-offset-2" href="tos.html" target="_blank" rel="noopener noreferrer">Terms of Service</a>.</span>
+</label>
+<p class="text-error text-sm hidden" id="tos-agreement-error">Please agree to the Terms of Service to continue.</p>
+</div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 <button class="w-full py-4 min-h-[48px] neon-btn flex items-center justify-center gap-4 group" id="email-booking-button" type="button">
                             EMAIL BOOKING
@@ -387,6 +395,7 @@
 </div>
 <div class="flex flex-wrap justify-center gap-8">
 <a class="instagram-link text-on-secondary-fixed-variant hover:text-on-surface transition-colors duration-200 font-label-sm text-label-sm" data-instagram-web="https://www.instagram.com/valence.details/" href="instagram://user?username=valence.details">Instagram</a>
+<a class="text-on-secondary-fixed-variant hover:text-on-surface transition-colors duration-200 font-label-sm text-label-sm" href="tos.html">Terms of Service</a>
 </div>
 </div>
 </footer>
@@ -445,9 +454,25 @@
         const bookingForm = document.getElementById('booking-form');
         const emailBookingButton = document.getElementById('email-booking-button');
         const textBookingButton = document.getElementById('text-booking-button');
+        const tosAgreementCheckbox = document.getElementById('tos-agreement');
+        const tosAgreementError = document.getElementById('tos-agreement-error');
         const bookingEmailAddress = 'devon@valencedetails.com';
         const isMobileDevice = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) ||
             (navigator.maxTouchPoints > 0 && Math.min(screen.width, screen.height) <= 900);
+
+        function hasAcceptedTerms() {
+            const accepted = !!(tosAgreementCheckbox && tosAgreementCheckbox.checked);
+
+            if (tosAgreementError) {
+                tosAgreementError.classList.toggle('hidden', accepted);
+            }
+
+            if (!accepted && tosAgreementCheckbox) {
+                tosAgreementCheckbox.focus();
+            }
+
+            return accepted;
+        }
 
         async function copyEmailAddress() {
             if (!contactEmailAddress) {
@@ -507,6 +532,7 @@
                 `Email Address: ${email}`,
                 `Phone Number: ${phone}`,
                 `Service Tier: ${serviceTier}`,
+                'Terms of Service: Accepted',
                 '',
                 'Details:',
                 details
@@ -518,11 +544,27 @@
         if (bookingForm) {
             bookingForm.addEventListener('submit', (event) => {
                 event.preventDefault();
+
+                if (!hasAcceptedTerms()) {
+                    return;
+                }
+            });
+        }
+
+        if (tosAgreementCheckbox) {
+            tosAgreementCheckbox.addEventListener('change', () => {
+                if (tosAgreementError) {
+                    tosAgreementError.classList.add('hidden');
+                }
             });
         }
 
         if (emailBookingButton) {
             emailBookingButton.addEventListener('click', () => {
+                if (!hasAcceptedTerms()) {
+                    return;
+                }
+
                 const draft = buildBookingDraft();
                 if (!draft) {
                     return;
@@ -547,6 +589,10 @@
 
         if (textBookingButton) {
             textBookingButton.addEventListener('click', () => {
+                if (!hasAcceptedTerms()) {
+                    return;
+                }
+
                 const draft = buildBookingDraft();
                 if (!draft) {
                     return;

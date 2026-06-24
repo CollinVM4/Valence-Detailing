@@ -245,6 +245,17 @@
             .site-nav-shell {
                 min-height: 78px;
             }
+
+            #gallery-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                min-height: auto;
+            }
+
+            #gallery-grid .exterior-item,
+            #gallery-grid .interior-item {
+                height: 42vw !important;
+                min-height: 0 !important;
+            }
         }
 
         html.force-mobile .desktop-nav {
@@ -297,6 +308,7 @@
 <a class="mobile-menu-link text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="index.html">Home</a>
 <a class="mobile-menu-link text-primary font-bold font-label-sm text-label-sm uppercase" href="gallery.html">Gallery</a>
 <a class="mobile-menu-link text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="services.html">Services</a>
+<a class="mobile-menu-link text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="tos.html">Terms of Service</a>
 <a class="mobile-menu-cta bg-primary text-on-primary-container px-6 py-3 font-label-sm text-label-sm font-bold uppercase text-center" href="contact.html">Book Now</a>
 </div>
 </div>
@@ -322,7 +334,7 @@
 </div>
 </div>
 <!-- Bento Grid Gallery -->
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-gutter min-h-[800px]" id="gallery-grid">
+<div class="grid grid-cols-2 md:grid-cols-12 gap-6 md:gap-gutter min-h-[800px]" id="gallery-grid">
 <!-- Exterior Item 1 - Featured -->
 <div class="exterior-item md:col-span-8 md:row-span-2 group relative overflow-hidden glass-card rounded-lg cursor-pointer image-zoom min-h-[62vh] md:min-h-0">
 <img alt="Feature vehicle" class="w-full h-full object-cover transition-transform duration-700 ease-out" data-alt="A high-performance luxury sports car" src="media\IMG_0572.png"/>
@@ -363,6 +375,22 @@
 </div>
 </div>
 
+<!-- Exterior Item 6 -->
+<div class="exterior-item md:col-span-6 group relative overflow-hidden glass-card rounded-lg cursor-pointer image-zoom h-[62vh] md:h-[360px]">
+<img alt="Freshly detailed exterior" class="w-full h-full object-cover transition-transform duration-700" data-alt="Freshly detailed vehicle exterior with reflective finish" src="media\newExterior1.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-70 md:opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-gutter opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
+</div>
+</div>
+
+<!-- Exterior Item 7 -->
+<div class="exterior-item md:col-span-6 group relative overflow-hidden glass-card rounded-lg cursor-pointer image-zoom h-[62vh] md:h-[360px]">
+<img alt="Freshly detailed exterior" class="w-full h-full object-cover transition-transform duration-700" data-alt="Freshly detailed vehicle exterior from a second angle" src="media\newExterior2.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-70 md:opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-gutter opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
+</div>
+</div>
+
 <!-- Interior Items (Hidden by default) -->
 <div class="interior-item hidden md:col-span-6 group relative overflow-hidden glass-card rounded-lg cursor-pointer image-zoom h-[62vh] md:h-auto">
 <img class="w-full h-full md:h-[400px] object-cover transition-transform duration-700" data-alt="Macro photography of a luxury car interior featuring perforated black leather seats with contrasting primary blue stitching. The lighting is soft and diffused, highlighting the deep cleaning and conditioning of the materials. The atmosphere is pristine and high-end, showcasing the architectural beauty of the cockpit's design through a brutalist lens." src="media\IMG_0563.png"/>
@@ -386,6 +414,27 @@
 
 <div class="interior-item hidden md:col-span-6 group relative overflow-hidden glass-card rounded-lg cursor-pointer image-zoom h-[62vh] md:h-auto">
 <img class="w-full h-full md:h-[400px] object-cover transition-transform duration-700" data-alt="A clean, minimalist view of a vehicle's interior" src="media\IMG_0577.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-70 md:opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-gutter opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
+</div>
+</div>
+
+<div class="interior-item hidden md:col-span-6 group relative overflow-hidden glass-card rounded-lg cursor-pointer image-zoom h-[62vh] md:h-auto">
+<img class="w-full h-full md:h-[400px] object-cover transition-transform duration-700" data-alt="New interior detail shot" src="media\newInterior1.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-70 md:opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-gutter opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
+</div>
+</div>
+
+<div class="interior-item hidden md:col-span-6 group relative overflow-hidden glass-card rounded-lg cursor-pointer image-zoom h-[62vh] md:h-auto">
+<img class="w-full h-full md:h-[400px] object-cover transition-transform duration-700" data-alt="New interior detail shot" src="media\newInterior2.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-70 md:opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-gutter opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
+</div>
+</div>
+
+<div class="interior-item hidden md:col-span-6 group relative overflow-hidden glass-card rounded-lg cursor-pointer image-zoom h-[62vh] md:h-auto">
+<img class="w-full h-full md:h-[400px] object-cover transition-transform duration-700" data-alt="New interior detail shot" src="media\newInterior3.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-70 md:opacity-0 group-hover:opacity-100 transition-opacity"></div>
 <div class="absolute bottom-0 left-0 p-gutter opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
 </div>
@@ -418,6 +467,7 @@
 <div class="order-3 flex md:justify-end gap-gutter flex-wrap">
 <a class="instagram-link font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-200" data-instagram-web="https://www.instagram.com/valence.details/" href="instagram://user?username=valence.details">Instagram</a>
 <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-200" href="contact.html">Contact Us</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-200" href="tos.html">Terms of Service</a>
 </div>
 </div>
 </footer>
@@ -543,11 +593,11 @@
             } else {
                 exteriorItems.forEach(el => el.classList.add('hidden'));
                 interiorItems.forEach(el => el.classList.remove('hidden'));
-                document.getElementById('gallery-grid').className = "grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-gutter min-h-[400px]";
+                document.getElementById('gallery-grid').className = "grid grid-cols-2 md:grid-cols-2 gap-6 md:gap-gutter min-h-[400px]";
             }
 
             if(type === 'exterior') {
-                document.getElementById('gallery-grid').className = "grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-gutter min-h-[800px]";
+                document.getElementById('gallery-grid').className = "grid grid-cols-2 md:grid-cols-12 gap-6 md:gap-gutter min-h-[800px]";
             }
         }
 
